@@ -190,8 +190,9 @@ image: /images/mario_animation (1).png
 
 </script>
 
-My journey starts here. - Aneesh Deevi
 ## Markdown samples markdown cheatsheet
+
+My journey starts here. - Aneesh Deevi
 Using markdown form index.md. We are learning markdown.
 
 This text below is something called Markdown. This is a heading, inside of code scaffolding.
