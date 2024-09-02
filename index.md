@@ -3,7 +3,7 @@ layout: base
 title: Student Home 
 description: Home Page
 author: Aneesh Deevi
-image: /images/mario_animation (1).png
+image: /images/mario_animation.png
 hide: true
 ---
 
