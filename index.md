@@ -216,4 +216,4 @@ Performing team work, team communication and collaboration, peer reviews/grading
 Focus on tehnical communications through project presentations and student led teaching
 Grades are on projects, learnt concepts, and live reviews between student(s) and teacher
 Jelly Fish Fun
-alt="Jellyfish - Wikipedia"/>![image](https://github.com/user-attachments/assets/9b73fa0d-5498-4fbc-8cf7-0d7072ba30ea)
+![image](https://github.com/user-attachments/assets/9b73fa0d-5498-4fbc-8cf7-0d7072ba30ea)
