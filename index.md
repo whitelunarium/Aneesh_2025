@@ -186,7 +186,8 @@ hide: true
     const scale = window.devicePixelRatio;
     const sprite = document.querySelector(".sprite");
     sprite.style.transform = `scale(${0.2 * scale})`;
-    mario.startResting();
+    #mario.startResting();
+    mario.startFlipping();
   });
 
 </script>
