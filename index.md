@@ -191,9 +191,11 @@ hide: true
 
 </script>
 
-# My journey starts here. - Aneesh Deevi
+## Markdown samples 
 
-## Markdown samples markdown cheatsheet
+My journey starts here. - Aneesh Deevi
+
+markdown cheatsheet
 
 Using markdown form index.md. We are learning markdown.
 
