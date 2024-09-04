@@ -2,8 +2,8 @@ title: Nighthawk Pages
 description: "Class of 2025"
 owner_name: Aneesh Deevi
 github_username: whitelunarium
-github_repo: "Aneesh_2025_2" 
-baseurl: "/Aneesh_2025_2"
+github_repo: "Aneesh_2025" 
+baseurl: "/Aneesh_2025"
 future: true
 remote_theme: jekyll/minima
 minima:
