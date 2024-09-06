@@ -37,10 +37,10 @@ Creator of Student 2025
     // 2. Define a JavaScript object for our http source and our data rows for the Living in the World grid
     var http_source = "https://upload.wikimedia.org/wikipedia/commons/";
     var living_in_the_world = [
-        {"flag": "0/01/Flag_of_California.svg", "greeting": "Hey", "description": "California - forever"},
-        {"flag": "b/b9/Flag_of_India.svg", "greeting": "Namaste", "description": "India - Parent's Birthplace"},
-        {"flag": "b/be/Flag_of_England.svg", "greeting": "Alright mate", "description": "England - 2 years"},
-        {"flag": "e/ef/Flag_of_Hawaii.svg", "greeting": "Aloha", "description": "Hawaii - 2 years"},
+        {"flag": "a/a9/Flag_of_California.svg", "greeting": "Hey", "description": "California - forever"},
+        {"flag": "4/41/Flag_of_India.svg", "greeting": "Namaste", "description": "India - Parent's birthplace"},
+        {"flag": "1/19/Flag_of_San_Diego.svg", "greeting": "Hi", "description": "San Diego - My birthplace"},
+        {"flag": "e/ef/Flag_of_Hawaii.svg", "greeting": "Aloha", "description": "Hawaii - My favorite vacation place"},
     ]; 
     
     // 3a. Consider how to update style count for size of container
