@@ -73,3 +73,19 @@ Creator of Student 2025
         container.appendChild(gridItem);
     }
 </script>
+
+### Journey through Life
+
+Here is what I did at those places
+
+- 
+
+### Culture, Family, and Fun
+
+Everything for me, as for many others, revolves around family and faith.
+
+- My mother told me that I was Indian.
+- The gallery of pics has some of my family, fun, culture and faith memories.
+
+<comment>
+Gallery of Pics, scroll to the right for more ...
