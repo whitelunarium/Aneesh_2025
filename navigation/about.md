@@ -37,9 +37,9 @@ Creator of Student 2025
     // 2. Define a JavaScript object for our http source and our data rows for the Living in the World grid
     var http_source = "https://upload.wikimedia.org/wikipedia/commons/";
     var living_in_the_world = [
-        {"flag": "a/a9/Flag_of_California.svg", "greeting": "Hey", "description": "California - forever"},
+        {"flag": "a/a9/Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg", "greeting": "Hey", "description": "California - forever"},
         {"flag": "4/41/Flag_of_India.svg", "greeting": "Namaste", "description": "India - Parent's birthplace"},
-        {"flag": "1/19/Flag_of_San_Diego.svg", "greeting": "Hi", "description": "San Diego - My birthplace"},
+        {"flag": "1/19/Flag_of_San_Diego%2C_California.svg", "greeting": "Hi", "description": "San Diego - My birthplace"},
         {"flag": "e/ef/Flag_of_Hawaii.svg", "greeting": "Aloha", "description": "Hawaii - My favorite vacation place"},
     ]; 
     
