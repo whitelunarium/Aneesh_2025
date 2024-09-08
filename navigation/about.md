@@ -97,4 +97,5 @@ Gallery of Pics, scroll to the right for more ...
   <img src="{{site.baseurl}}/images/about/IMG_0728.HEIC" alt="Image 5">
   <img src="{{site.baseurl}}/images/about/IMG_0745.HEIC" alt="Image 6">
   <img src="{{site.baseurl}}/images/about/IMG_0276.HEIC" alt="Image 7">
+  <img src="{{site.baseurl}}/images/about/basketball.jpeg" alt="Image 8">
 </div>
