@@ -74,18 +74,27 @@ Creator of Student 2025
     }
 </script>
 
-### Journey through Life
-
-Here is what I did at those places
-
-- 
-
-### Culture, Family, and Fun
+### My Life
 
 Everything for me, as for many others, revolves around family and faith.
 
 - My mother told me that I was Indian.
+- The time I spend with my family and friends are the best, I always look forward to those moments.
+- My brother is my role model.
+- I love going on vacations and trying new cuisines.
+- I think cars are really cool.
+- Basketball is my favorite sport.
 - The gallery of pics has some of my family, fun, culture and faith memories.
 
 <comment>
 Gallery of Pics, scroll to the right for more ...
+</comment>
+<div class="image-gallery">
+  <img src="{{site.baseurl}}/images/about/IMG_0389.HEIC" alt="Image 1">
+  <img src="{{site.baseurl}}/images/about/IMG_0306.HEIC" alt="Image 2">
+  <img src="{{site.baseurl}}/images/about/IMG_0758.HEIC" alt="Image 3">
+  <img src="{{site.baseurl}}/images/about/IMG_0750.HEIC" alt="Image 4">
+  <img src="{{site.baseurl}}/images/about/IMG_0728.HEIC" alt="Image 5">
+  <img src="{{site.baseurl}}/images/about/IMG_0745.HEIC" alt="Image 6">
+  <img src="{{site.baseurl}}/images/about/IMG_0276.HEIC" alt="Image 7">
+</div>
