@@ -23,6 +23,19 @@ Creator of Student 2025
     .grid-item p {
         margin: 5px 0; /* Add some margin for spacing */
     }
+    
+    .image-gallery {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 10px;
+        }
+
+    .image-gallery img {
+        max-height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
 </style>
 
 <!-- This grid_container class is for the CSS styling, the id is for JavaScript connection -->
