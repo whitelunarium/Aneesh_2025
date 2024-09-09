@@ -90,12 +90,12 @@ Everything for me, as for many others, revolves around family and faith.
 Gallery of Pics, scroll to the right for more ...
 </comment>
 <div class="image-gallery">
-  <img src="{{site.baseurl}}/images/about/IMG_0389.HEIC" alt="Image 1">
-  <img src="{{site.baseurl}}/images/about/IMG_0306.HEIC" alt="Image 2">
-  <img src="{{site.baseurl}}/images/about/IMG_0758.HEIC" alt="Image 3">
-  <img src="{{site.baseurl}}/images/about/IMG_0750.HEIC" alt="Image 4">
-  <img src="{{site.baseurl}}/images/about/IMG_0728.HEIC" alt="Image 5">
-  <img src="{{site.baseurl}}/images/about/IMG_0745.HEIC" alt="Image 6">
-  <img src="{{site.baseurl}}/images/about/IMG_0276.HEIC" alt="Image 7">
+  <img src="{{site.baseurl}}/images/about/IMG_0389.jpg" alt="Image 1">
+  <img src="{{site.baseurl}}/images/about/IMG_0306.jpg" alt="Image 2">
+  <img src="{{site.baseurl}}/images/about/IMG_0758.jpg" alt="Image 3">
+  <img src="{{site.baseurl}}/images/about/IMG_0750.jpg" alt="Image 4">
+  <img src="{{site.baseurl}}/images/about/IMG_0728.jpg" alt="Image 5">
+  <img src="{{site.baseurl}}/images/about/IMG_0745.jpg" alt="Image 6">
+  <img src="{{site.baseurl}}/images/about/IMG_0276.jpg" alt="Image 7">
   <img src="{{site.baseurl}}/images/about/basketball.jpeg" alt="Image 8">
 </div>
