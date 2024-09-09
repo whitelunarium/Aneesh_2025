@@ -4,7 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Creator of Student 2025
+Here are some places that relate to me.
+
+<comment>
+Flags are made using Wikipedia images
+</comment>
+
 <style>
     /* Style looks pretty compact, trace grid-container and grid-item in the code */
     .grid-container {
