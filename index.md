@@ -7,6 +7,8 @@ image: /images/mario_animation.png
 hide: true
 ---
 
+New Kasm Test
+
 <!-- Liquid:  statements -->
 
 <!-- Include submenu from _includes to top of pages -->
