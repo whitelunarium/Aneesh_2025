@@ -83,3 +83,13 @@ permalink: /interests/
 ![ccr]({{site.baseurl}}/images/interest/gta.jpeg)
 ![ccr]({{site.baseurl}}/images/interest/forza.jpeg)
 ![ccr]({{site.baseurl}}/images/interest/car.jpeg)
+
+<!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="{{ site.github_username }}/{{ site.github_repo | default: site.baseurl | remove: "/" }}"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
