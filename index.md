@@ -219,3 +219,13 @@ Grades are on projects, learnt concepts, and live reviews between student(s) and
 Jelly Fish Fun.
 
 ![image](https://github.com/user-attachments/assets/9b73fa0d-5498-4fbc-8cf7-0d7072ba30ea)
+
+<!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="{{ site.github_username }}/{{ site.github_repo | default: site.baseurl | remove: "/" }}"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
