@@ -80,8 +80,4 @@ permalink: /interests/
 - I want to give others the same enjoyment I had when I was younger.
 - My favorite type of games would be car games, that is why I want to create a car game for kids when I am older.
 
-<div class="image-gallery">
-  <img src="{{site.baseurl}}/images/about/gta.jpeg" alt="Image 1">
-  <img src="{{site.baseurl}}/images/about/forza.jpeg" alt="Image 2">
-  <img src="{{site.baseurl}}/images/about/car.jpeg" alt="Image 3">
-</div>
+![ccr]({{site.baseurl}}/images/interest/gta.jpeg)
