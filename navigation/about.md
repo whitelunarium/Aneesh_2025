@@ -117,3 +117,13 @@ Gallery of Pics, scroll to the right for more ...
   <img src="{{site.baseurl}}/images/about/IMG_0276.jpg" alt="Image 7">
   <img src="{{site.baseurl}}/images/about/basketball.jpeg" alt="Image 8">
 </div>
+
+<!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="{{ site.github_username }}/{{ site.github_repo | default: site.baseurl | remove: "/" }}"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
