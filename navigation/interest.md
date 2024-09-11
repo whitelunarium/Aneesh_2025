@@ -81,3 +81,5 @@ permalink: /interests/
 - My favorite type of games would be car games, that is why I want to create a car game for kids when I am older.
 
 ![ccr]({{site.baseurl}}/images/interest/gta.jpeg)
+![ccr]({{site.baseurl}}/images/interest/forza.jpeg)
+![ccr]({{site.baseurl}}/images/interest/car.jpeg)
