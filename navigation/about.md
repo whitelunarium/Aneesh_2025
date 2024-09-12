@@ -127,3 +127,6 @@ Gallery of Pics, scroll to the right for more ...
         crossorigin="anonymous"
         async>
 </script>
+<a href = "https://whitelunarium.github.io/Aneesh_2025/interests/">
+<button> Click this button to learn abbout my interests</button>
+</a>
