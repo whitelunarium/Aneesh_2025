@@ -1,11 +1,12 @@
 ---
 layout: page
 title: Snake
-permalink: /snake.md/
+permalink: /snake/
 ---
 
 {% include nav/home.html %}
 
+Future home of snake
 <style>
 
     body{
