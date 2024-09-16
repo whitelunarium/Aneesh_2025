@@ -372,13 +372,12 @@ permalink: /snake/
 
     // Function to toggle fullscreen mode
 function toggleFullScreen() {
+    const canvas = document.getElementById("snake"); // Target the canvas for fullscreen
     if (!document.fullscreenElement) {
-        // Enter fullscreen mode
-        document.documentElement.requestFullscreen().catch(err => {
+        canvas.requestFullscreen().catch(err => {
             console.log(`Error attempting to enable fullscreen mode: ${err.message}`);
         });
     } else {
-        // Exit fullscreen mode
         document.exitFullscreen();
     }
 }
