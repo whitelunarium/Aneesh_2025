@@ -369,4 +369,31 @@ permalink: /snake/
             if(wall === 1){screen_snake.style.borderColor = "#FFFFFF";}
         }
     })();
+
+    // Function to toggle fullscreen mode
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        // Enter fullscreen mode
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log(`Error attempting to enable fullscreen mode: ${err.message}`);
+        });
+    } else {
+        // Exit fullscreen mode
+        document.exitFullscreen();
+    }
+}
+
+// Example: Trigger fullscreen mode on pressing the 'F' key
+document.addEventListener('keydown', function(event) {
+    if (event.key === "f" || event.key === "F") {
+        toggleFullScreen();
+    }
+});
+
+// Optional: Button to toggle fullscreen mode
+const fullscreenButton = document.getElementById('fullscreen-btn');
+if (fullscreenButton) {
+    fullscreenButton.addEventListener('click', toggleFullScreen);
+}
+
 </script>
