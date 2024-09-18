@@ -1,7 +1,7 @@
 ---
 layout: base 
-title: Interests
-permalink: /interests/
+title: Ideas
+permalink: /ideas/
 ---
 
 <style>
