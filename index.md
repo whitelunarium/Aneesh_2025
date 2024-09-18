@@ -230,3 +230,6 @@ Jelly Fish Fun.
         crossorigin="anonymous"
         async>
 </script>
+<a href = "https://whitelunarium.github.io/Aneesh_2025/interests/">
+<button> Click this button to learn about my Interests</button>
+</a>
