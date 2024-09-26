@@ -10,14 +10,14 @@ permalink: /rpg/
     import GameControl from '{{site.baseurl}}/assets/js/rpg/GameControl.js';
 
     // Background data
-    const image_src = "{{site.baseurl}}/images/rpg/PlayerMovement.png";
+    const image_src = "{{site.baseurl}}/images/rpg/41524.jpg";
     const image_data = {
         pixels: {height: 580, width: 1038}
     };
     const image = {src: image_src, data: image_data};
 
     // Sprite data
-    const sprite_src = "{{site.baseurl}}/images/rpg/catbus-removebg-preview.png";
+    const sprite_src = "{{site.baseurl}}/images/rpg/PlayerMovement.png";
     const sprite_data = {
         SCALE_FACTOR: 10,
         STEP_FACTOR: 1000,
