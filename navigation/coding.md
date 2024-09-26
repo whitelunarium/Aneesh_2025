@@ -1,7 +1,7 @@
 ---
 layout: base 
-title: Ideas
-permalink: /ideas/
+title: Coding
+permalink: /coding/
 ---
 
 <style>
