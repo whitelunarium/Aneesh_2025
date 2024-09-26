@@ -5,7 +5,7 @@ search_exclude: true
 permalink: /blogs/
 ---
 
-## Integration Issue Link: https://github.com/whitelunarium/Aneesh_2025/issues/6
+## Integration Issue [ [Link] ](https://github.com/whitelunarium/Aneesh_2025/issues/6))
 
 |Hack | Skill   | Notes |
 |---------|---------|-------|
