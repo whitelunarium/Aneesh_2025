@@ -5,6 +5,8 @@ search_exclude: true
 permalink: /blogs/
 ---
 
+Hi
+
 |Hack | Skill   | Notes |
 |---------|---------|-------|
 |  JSON Object | rpg.md          |Defines the data for game assets (like images and sprites) and starts the game.|
