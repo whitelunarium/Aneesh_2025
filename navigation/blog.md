@@ -77,7 +77,8 @@ permalink: /blogs/
 ![41524](https://github.com/user-attachments/assets/a4a667e2-1f93-411a-83a9-d630120b9a85)
 
 ### Player I used:
-![catbus-removebg-preview](https://github.com/user-attachments/assets/848814c8-40c1-428e-a6c2-f45b59ca57a6)
+![Bunny-Sprite](https://github.com/user-attachments/assets/68e6c293-48fa-4ba5-b2ed-a992150c652d)
+
 
 ## Ideation Hacks
 - include levels, each level has a different task/objective the player must complete.
