@@ -88,6 +88,7 @@ permalink: /blogs/
 - create a puzzle with an obstacle to overcome
 - have sprites that correspond to the backgrounds environment
 - along the puzzle I want to have a trap like one that shows up out of nowhere when you get close enough to it
+- I also want to create a two player game using WASD and the arrow keys, where one is the one trying to overcome the puzzle and the other trying to stop the one tryping to overcome the puzzle
 
 
 <!-- from https://github.com/utterance/utterances -->
