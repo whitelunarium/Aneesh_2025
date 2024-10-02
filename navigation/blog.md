@@ -7,7 +7,7 @@ permalink: /blogs/
 
 ## Integration Issue [ [Link] ](https://github.com/whitelunarium/Aneesh_2025/issues/6)
 
-<table style="width:100%; border: 1px white;">
+<table style="width:100%; border: 1px solid black;">
   <tr>
     <th style="text-align:left">Hack</th>
     <th style="text-align:center">Skill</th>
