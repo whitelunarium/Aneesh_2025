@@ -7,21 +7,7 @@ permalink: /blogs/
 
 ## Integration Issue [ [Link] ](https://github.com/whitelunarium/Aneesh_2025/issues/6)
 
-|Hack | Skill   | Notes |
-|---------|---------|-------|
-|  JSON Object | rpg.md          |Defines the data for game assets (like images and sprites) and starts the game.|
-| JSON Object  | GameControl.js              |Manages the overall game logic.       |
-|  JSON Object |  GameEnv.js              |Defines the game environment by managing the size, and its dimensions.       |
-|  JSON Object | Background.js             | Handles the background of the game.      |
-| JSON Object  | Player.js              |Handles the sprite's appearance and movement.|
-|  Background  | Background!       |  ![41524](https://github.com/user-attachments/assets/1b36835c-d803-4a9d-bb73-4c8bea241adc)|
-| Player  | Dependencies        | Both Player.js and Background.js import GameEnv.      |
-|  Player | Constructor            | Makes an image      |
-|  Player  |Attributes              | Includes sprite, position, current animation frame, and movement direction.      |
-|  Player | Methods             | The draw() method in both files uses GameEnv.ctx.drawImage() to render the image on the canvas.|
-|  Player | Exports | Both export the class (Player or Background) as default. |
-
-<table style="width:100%; border: 1px solid black;">
+<table style="width:100%; border: 1px white;">
   <tr>
     <th style="text-align:left">Hack</th>
     <th style="text-align:center">Skill</th>
@@ -92,6 +78,17 @@ permalink: /blogs/
 
 ### Player I used:
 ![catbus-removebg-preview](https://github.com/user-attachments/assets/848814c8-40c1-428e-a6c2-f45b59ca57a6)
+
+## Ideation Hacks
+- include levels, each level has a different task/objective the player must complete.
+- incorporate sound effects for the player to have a more intense gaming experience. 
+- should have multiple sprites, some for specific levels. 
+- sprite speed should be customizable (monster sprite speed: easy, medium, or hard)
+
+- create a puzzle with an obstacle to overcome
+- have sprites that correspond to the backgrounds environment
+- along the puzzle I want to have a trap like one that shows up out of nowhere when you get close enough to it
+
 
 <!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
