@@ -5,8 +5,8 @@ description: Home Page
 author: Aneesh Deevi
 image: /images/mario_animation.png
 hide: true
+permalink: /home/
 ---
-
 New Kasm Test
 
 <!-- Liquid:  statements -->
