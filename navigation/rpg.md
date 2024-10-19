@@ -7,8 +7,9 @@ permalink: /rpg/
 <canvas id='gameCanvas'></canvas>
 
 <script type="module">
-    // Ensure that GameControl.js is correctly loaded
     import GameControl from '{{site.baseurl}}/assets/js/rpg/GameControl.js';
+
+    let gameControl = null;  // Initialize it here so it's declared in the global scope
 
     function resizeCanvas() {
         const canvas = document.getElementById('gameCanvas');
@@ -16,95 +17,66 @@ permalink: /rpg/
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
 
-            // Optional: Trigger a game redraw if necessary
+            // Render something basic for testing
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = 'green';
+            ctx.fillRect(10, 10, 150, 100);
+
+            // Check if gameControl exists before using it
             if (gameControl) {
-                gameControl.redraw();
+                // Optionally, add some game logic here if needed
+                console.log("GameControl is initialized, resizing canvas...");
+            } else {
+                console.log("GameControl is not initialized yet.");
             }
         } else {
             console.error("Canvas element not found");
         }
     }
 
-    // Event listeners for resizing and fullscreen changes
     document.addEventListener('fullscreenchange', resizeCanvas);
     window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();  // Initialize the canvas size
 
-    // Initial canvas resize
-    resizeCanvas();
-
-    // Image assets data
-    const images = [
-        {
-            src: "{{site.baseurl}}/images/rpg/41524.jpg",
-            data: { pixels: { height: 580, width: 1038 } }
-        },
-        {
-            src: "{{site.baseurl}}/images/rpg/Maze_Background.png",
-            data: { pixels: { height: 580, width: 1038 } }
-        }
-    ];
-
-    // Sprite data for Bunny-Sprite and Fishies
-    const sprite = {
-        src: "{{site.baseurl}}/images/rpg/Bunny-Sprite.png",
-        data: {
-            SCALE_FACTOR: 10,
-            STEP_FACTOR: 1000,
-            ANIMATION_RATE: 50,
-            pixels: { height: 159, width: 119 },
-            orientation: { rows: 4, columns: 3 },
-            down: { row: 0, start: 0, columns: 3 },
-            left: { row: 2, start: 0, columns: 3 },
-            right: { row: 3, start: 0, columns: 3 },
-            up: { row: 1, start: 0, columns: 3 },
-        }
-    };
-
-    const sprite2 = {
-        src: "{{site.baseurl}}/images/rpg/fishies.png",
-        data: { ...sprite.data } // Duplicate structure for sprite2
-    };
-
-    const assets = {
-        images,
-        sprite,
-        sprite2
-    };
-
-    // Initialize the GameControl class
-    let gameControl;
+    // Initialize gameControl AFTER the resize functions
     try {
-        gameControl = new GameControl();
-        gameControl.start(assets);
+        gameControl = new GameControl();  // Initialize GameControl here
+        console.log("GameControl initialized");
+        
+        // Load assets and start the game
+        const sprite = {
+            src: "{{site.baseurl}}/images/rpg/Bunny-Sprite.png",
+            data: {
+                SCALE_FACTOR: 10,
+                STEP_FACTOR: 1000,
+                ANIMATION_RATE: 50,
+                pixels: { height: 159, width: 119 },
+                orientation: { rows: 4, columns: 3 },
+                down: { row: 0, start: 0, columns: 3 },
+                left: { row: 2, start: 0, columns: 3 },
+                right: { row: 3, start: 0, columns: 3 },
+                up: { row: 1, start: 0, columns: 3 },
+            }
+        };
+
+        const assets = { sprite };
+        gameControl.start(assets);  // Start the game once initialized
     } catch (error) {
         console.error("Error initializing GameControl:", error);
     }
 
-    // Toggle fullscreen mode on canvas click
-    function toggleFullScreen() {
-        const canvas = document.getElementById('gameCanvas');
-        if (canvas) {
-            if (!document.fullscreenElement) {
-                if (canvas.requestFullscreen) {
-                    canvas.requestFullscreen();
-                } else {
-                    console.error("Fullscreen API not supported");
-                }
-            } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                }
+    // Add fullscreen toggle functionality
+    const canvas = document.getElementById('gameCanvas');
+    canvas.addEventListener('click', function toggleFullScreen() {
+        if (!document.fullscreenElement) {
+            if (canvas.requestFullscreen) {
+                canvas.requestFullscreen();
             }
         } else {
-            console.error("Canvas element not found for fullscreen");
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
         }
-    }
-
-    // Add click listener to canvas
-    const canvas = document.getElementById('gameCanvas');
-    if (canvas) {
-        canvas.addEventListener('click', toggleFullScreen);
-    } else {
-        console.error("Canvas element not found");
-    }
+    });
 </script>
+
