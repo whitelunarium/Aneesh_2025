@@ -191,8 +191,7 @@ hide: true
 
 </script>
 
-## Home
-
+# Home
 This blog contains my journey into Coding.
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
@@ -223,8 +222,7 @@ This blog contains my journey into Coding.
         </div>
     </a>
 
-### Game Progress
-
+## Game Progress
 > Here is my progress through game coding, click to see these online
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
@@ -241,8 +239,7 @@ This blog contains my journey into Coding.
     </a>
 </div>
 
-### Jupyter Notebooks
-
+## Jupyter Notebooks
 > Here is my preparation for my Sprint objectives, click to review all hacks
 
 <style>
