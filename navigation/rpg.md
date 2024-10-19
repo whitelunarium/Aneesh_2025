@@ -7,19 +7,32 @@ permalink: /rpg/
 <canvas id='gameCanvas'></canvas>
 
 <script type="module">
+    // Ensure that GameControl.js is correctly loaded
     import GameControl from '{{site.baseurl}}/assets/js/rpg/GameControl.js';
 
     function resizeCanvas() {
         const canvas = document.getElementById('gameCanvas');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        if (canvas) {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            // Optional: Trigger a game redraw if necessary
+            if (gameControl) {
+                gameControl.redraw();
+            }
+        } else {
+            console.error("Canvas element not found");
+        }
     }
 
+    // Event listeners for resizing and fullscreen changes
     document.addEventListener('fullscreenchange', resizeCanvas);
     window.addEventListener('resize', resizeCanvas);
+
+    // Initial canvas resize
     resizeCanvas();
 
-    // Background data for images
+    // Image assets data
     const images = [
         {
             src: "{{site.baseurl}}/images/rpg/41524.jpg",
@@ -31,6 +44,7 @@ permalink: /rpg/
         }
     ];
 
+    // Sprite data for Bunny-Sprite and Fishies
     const sprite = {
         src: "{{site.baseurl}}/images/rpg/Bunny-Sprite.png",
         data: {
@@ -48,7 +62,7 @@ permalink: /rpg/
 
     const sprite2 = {
         src: "{{site.baseurl}}/images/rpg/fishies.png",
-        data: { ...sprite.data } // Use the same sprite data structure
+        data: { ...sprite.data } // Duplicate structure for sprite2
     };
 
     const assets = {
@@ -57,23 +71,40 @@ permalink: /rpg/
         sprite2
     };
 
-    // Start the game
-    const gameControl = new GameControl();
-    gameControl.start(assets);
+    // Initialize the GameControl class
+    let gameControl;
+    try {
+        gameControl = new GameControl();
+        gameControl.start(assets);
+    } catch (error) {
+        console.error("Error initializing GameControl:", error);
+    }
 
+    // Toggle fullscreen mode on canvas click
     function toggleFullScreen() {
         const canvas = document.getElementById('gameCanvas');
-        if (!document.fullscreenElement) {
-            if (canvas.requestFullscreen) {
-                canvas.requestFullscreen();
+        if (canvas) {
+            if (!document.fullscreenElement) {
+                if (canvas.requestFullscreen) {
+                    canvas.requestFullscreen();
+                } else {
+                    console.error("Fullscreen API not supported");
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
             }
         } else {
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            }
+            console.error("Canvas element not found for fullscreen");
         }
     }
 
+    // Add click listener to canvas
     const canvas = document.getElementById('gameCanvas');
-    canvas.addEventListener('click', toggleFullScreen);
+    if (canvas) {
+        canvas.addEventListener('click', toggleFullScreen);
+    } else {
+        console.error("Canvas element not found");
+    }
 </script>
