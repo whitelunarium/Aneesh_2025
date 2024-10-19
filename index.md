@@ -207,7 +207,7 @@ This blog contains my journey into Coding.
         </div>
     </a>
 
-    <a href="{{site.baseurl}}/blog" style="text-decoration: none;">
+    <a href="{{site.baseurl}}/blogs" style="text-decoration: none;">
         <div class="button" style="background-color: #883d12; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
             Blogs
         </div>
