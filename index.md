@@ -192,14 +192,16 @@ hide: true
 </script>
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-    <a href="{{site.baseurl}}/rpg/">
-        <img src="https://img.shields.io/badge/RPG-123123?style=for-the-badge&logo=1001tracklists&logoColor=white&logoSize=auto&color=black" alt="RPG" style="width: 200px; height: auto;">
+    <a href="{{site.baseurl}}/rpg" style="text-decoration: none;">
+        <div style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+            RPG
+        </div>
     </a>
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/snake" style="text-decoration: none;">
         <div style="background-color: #247827; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
-            Snake Game
+            Snake
         </div>
     </a>
 
