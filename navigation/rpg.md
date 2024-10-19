@@ -10,21 +10,32 @@ permalink: /rpg/
     import GameControl from '{{site.baseurl}}/assets/js/rpg/GameControl.js';
 
     let gameControl = null;  // Initialize it here so it's declared in the global scope
+    let backgroundImage = new Image();  // Create a new Image object for the background
 
+    // Load the background image
+    backgroundImage.src = "{{site.baseurl}}/images/rpg/Maze_Background.png";  // Make sure this path is correct
+
+    // Function to resize and redraw the canvas
     function resizeCanvas() {
         const canvas = document.getElementById('gameCanvas');
         if (canvas) {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
 
-            // Render something basic for testing
             const ctx = canvas.getContext('2d');
-            ctx.fillStyle = 'green';
-            ctx.fillRect(10, 10, 150, 100);
+
+            // Ensure the background image is loaded before rendering it
+            backgroundImage.onload = function() {
+                ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);  // Draw the background image
+            }
+
+            // Fallback: If the image has already loaded, redraw it
+            if (backgroundImage.complete) {
+                ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
+            }
 
             // Check if gameControl exists before using it
             if (gameControl) {
-                // Optionally, add some game logic here if needed
                 console.log("GameControl is initialized, resizing canvas...");
             } else {
                 console.log("GameControl is not initialized yet.");
@@ -79,4 +90,3 @@ permalink: /rpg/
         }
     });
 </script>
-
