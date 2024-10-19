@@ -193,17 +193,25 @@ hide: true
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/rpg" style="text-decoration: none;">
-        <div style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+        <div class="button" style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
             RPG
         </div>
     </a>
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/snake" style="text-decoration: none;">
-        <div style="background-color: #247827; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+        <div class="button" style="background-color: #247827; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
             Snake
         </div>
     </a>
+</div>
+
+<style>
+  /* Apply hover effect on the button to scale it */
+  .button:hover {
+    transform: scale(1.2); /* Increase size by 20% */
+  }
+</style>
+
 
 <!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
