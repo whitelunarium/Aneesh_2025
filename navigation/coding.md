@@ -75,7 +75,8 @@ permalink: /coding/
 
 # Interests
 
-## Things about Computer Science that interest me!
+
+### Things about Computer Science that interest me!
 - I joined CSSE because I like playing games and I would like create games for others to play.
 - I want to give others the same enjoyment I had when I was younger.
 - My favorite type of games would be car games, that is why I want to create a car game for kids when I am older.
