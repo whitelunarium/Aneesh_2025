@@ -195,7 +195,7 @@ hide: true
 This blog contains my journey into Coding.
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-    <a href="{{site.baseurl}}/studenthome" style="text-decoration: none;">
+    <a href="{{site.baseurl}}/home" style="text-decoration: none;">
         <div class="button" style="background-color: #12886d; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
             Student Home
         </div>
