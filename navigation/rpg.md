@@ -47,7 +47,7 @@ permalink: /rpg/
     };
 
     const sprite2 = {
-        src: "{{site.baseurl}}/images/rpg/bunnyhunter.png.png",
+        src: "{{site.baseurl}}/images/rpg/fishies.png",
         data: { ...sprite.data } // Use the same sprite data structure
     };
 
