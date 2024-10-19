@@ -201,26 +201,24 @@ This blog contains my journey into Coding.
         </div>
     </a>
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/about" style="text-decoration: none;">
         <div class="button" style="background-color: #888812; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
             About Me
         </div>
     </a>
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/blog" style="text-decoration: none;">
         <div class="button" style="background-color: #883d12; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
             Blogs
         </div>
     </a>
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/coding" style="text-decoration: none;">
         <div class="button" style="background-color: #122188; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
             Coding
         </div>
     </a>
+</div>
 
 ## Game Progress
 > Here is my progress through game coding, click to see these online
@@ -247,8 +245,17 @@ This blog contains my journey into Coding.
   .button:hover {
     transform: scale(1.2); /* Increase size by 20% */
   }
-</style>
 
+  /* Change the color of text under the Home section */
+  body {
+    color: white;
+  }
+
+  /* Ensure buttons in the Home section are aligned side by side */
+  .button {
+    display: inline-block; /* Make the buttons inline elements */
+  }
+</style>
 
 <!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
