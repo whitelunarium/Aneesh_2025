@@ -207,11 +207,8 @@ This blog contains my journey into Coding.
         </div>
     </a>
 
-    <a href="{{site.baseurl}}/blogs" style="text-decoration: none;">
-        <div class="button" style="background-color: #883d12; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
-            Blogs
-        </div>
-    </a>
+  
+
 
     <a href="{{site.baseurl}}/coding" style="text-decoration: none;">
         <div class="button" style="background-color: #122188; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
@@ -237,12 +234,12 @@ This blog contains my journey into Coding.
     </a>
 </div>
 
-<a href="{{site.baseurl}}/rpg/latest" style="text-decoration: none;">
-        <div class="button" style="background-color: #247827; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <a href="{{site.baseurl}}/rpg/latest" style="text-decoration: none;">
+        <div class="button" style="background-color: #fffff; color: black; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
             Latest RPG
         </div>
     </a>
-</div>
 
 ## Jupyter Notebooks
 > Here is my preparation for my Sprint objectives, click to review all hacks
