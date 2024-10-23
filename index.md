@@ -240,6 +240,13 @@ This blog contains my journey into Coding.
 ## Jupyter Notebooks
 > Here is my preparation for my Sprint objectives, click to review all hacks
 
+<a href="{{url}}/https://github.com/whitelunarium/Aneesh_2025/blob/main/_notebooks/Foundation/Sprint1/2024-07-20-SASS-hacks.ipynb" style="text-decoration: none;">
+        <div class="button" style="background-color: #247827; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+            SASS
+        </div>
+    </a>
+</div>
+
  <a href="https://github.com/whitelunarium/Aneesh_2025/blob/main/_notebooks/Foundation/Sprint1/2024-07-20-SASS-hacks.ipynb" style="text-decoration: none;">
     <div class="button" style="background-color: #247827; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
         SASS
