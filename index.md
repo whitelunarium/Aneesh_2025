@@ -237,6 +237,13 @@ This blog contains my journey into Coding.
     </a>
 </div>
 
+<a href="{{site.baseurl}}/rpg/latest" style="text-decoration: none;">
+        <div class="button" style="background-color: #247827; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+            Latest RPG
+        </div>
+    </a>
+</div>
+
 ## Jupyter Notebooks
 > Here is my preparation for my Sprint objectives, click to review all hacks
 
