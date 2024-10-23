@@ -41,4 +41,5 @@ permalink: /rpg/latest
 
     // Start game engine
     GameControl.start(path);
+
 </script>
