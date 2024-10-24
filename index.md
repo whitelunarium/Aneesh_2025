@@ -202,16 +202,13 @@ This blog contains my journey into Coding.
     </a>
 
     <a href="{{site.baseurl}}/about" style="text-decoration: none;">
-        <div class="button" style="background-color: #888812; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+        <div class="button" style="background-color: #f39c12; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
             About Me
         </div>
     </a>
 
-  
-
-
     <a href="{{site.baseurl}}/coding" style="text-decoration: none;">
-        <div class="button" style="background-color: #122188; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+        <div class="button" style="background-color: #3498db; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
             Coding
         </div>
     </a>
@@ -222,13 +219,13 @@ This blog contains my journey into Coding.
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/rpg" style="text-decoration: none;">
-        <div class="button" style="background-color: #000000; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+        <div class="button" style="background-color: #8e44ad; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
             RPG
         </div>
     </a>
 
     <a href="{{site.baseurl}}/snake" style="text-decoration: none;">
-        <div class="button" style="background-color: #247827; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+        <div class="button" style="background-color: #2ecc71; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
             Snake
         </div>
     </a>
@@ -236,35 +233,33 @@ This blog contains my journey into Coding.
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/rpg/latest" style="text-decoration: none;">
-        <div class="button" style="background-color: #fffff; color: black; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+        <div class="button" style="background-color: #e74c3c; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
             Latest RPG
         </div>
     </a>
+</div>
 
 ## Jupyter Notebooks
 > Here is my preparation for my Sprint objectives, click to review all hacks
 
-<a href="https://github.com/whitelunarium/Aneesh_2025/blob/main/_notebooks/Foundation/Sprint1" style="text-decoration: none;">
-        <div class="button" style="background-color: #247827; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <a href="https://github.com/whitelunarium/Aneesh_2025/blob/main/_notebooks/Foundation/Sprint1" style="text-decoration: none;">
+        <div class="button" style="background-color: #f1c40f; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
             Sprint 1
         </div>
     </a>
 
-<a href="https://github.com/whitelunarium/Aneesh_2025/blob/main/_notebooks/Foundation/Sprint1" style="text-decoration: none;">
-    <div class="button" style="background-color: #247827; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
-        Sprint 2
-    </div>
-</a>
+    <a href="https://github.com/whitelunarium/Aneesh_2025/blob/main/_notebooks/Foundation/Sprint2" style="text-decoration: none;">
+        <div class="button" style="background-color: #d35400; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+            Sprint 2
+        </div>
+    </a>
+</div>
 
 <style>
   /* Apply hover effect on the button to scale it */
   .button:hover {
     transform: scale(1.2); /* Increase size by 20% */
-  }
-
-  /* Change the color of text under the Home section */
-  body {
-    color: white;
   }
 
   /* Ensure buttons in the Home section are aligned side by side */
