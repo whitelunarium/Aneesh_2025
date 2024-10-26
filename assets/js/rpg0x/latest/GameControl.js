@@ -19,7 +19,6 @@ import GameLevelWater from './GameLevelWater.js';
  * @property {function} gameLoop - The game loop.
  * @property {function} resize - Resize the canvas and player object when the window is resized.
  */
-
 const GameControl = {
 
     start: function(path) {
@@ -30,18 +29,14 @@ const GameControl = {
         // Prepare game objects for the level
         for (let object of gameLevel.objects) {
             if (!object.data) object.data = {};
-            new object.class(object.data);
+            new object.class(object.data) 
         }
         // Start the game loop
         this.gameLoop();
-
-        // Attach fullscreen toggle to canvas
-        const canvas = document.getElementById('gameCanvas');
-        canvas.addEventListener('click', this.toggleFullScreen.bind(this, canvas));
     },
 
     gameLoop: function() {
-        // Clear the canvas
+         // Clear the canvas
         GameEnv.clear();
         // Update the game objects
         for (let object of GameEnv.gameObjects) {
@@ -56,34 +51,7 @@ const GameControl = {
         GameEnv.resize(); 
         // Resize the game objects
         for (let object of GameEnv.gameObjects) {
-            if (object.resize) object.resize(); // Ensure the object has a resize method
-        }
-    },
-
-    toggleFullScreen: function(canvas) {
-        // Check if we are already in fullscreen mode
-        if (!document.fullscreenElement) {
-            // Enter fullscreen
-            if (canvas.requestFullscreen) {
-                canvas.requestFullscreen();
-            } else if (canvas.mozRequestFullScreen) { // Firefox
-                canvas.mozRequestFullScreen();
-            } else if (canvas.webkitRequestFullscreen) { // Chrome, Safari, Opera
-                canvas.webkitRequestFullscreen();
-            } else if (canvas.msRequestFullscreen) { // IE/Edge
-                canvas.msRequestFullscreen();
-            }
-        } else {
-            // Exit fullscreen
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            } else if (document.mozCancelFullScreen) { // Firefox
-                document.mozCancelFullScreen();
-            } else if (document.webkitExitFullscreen) { // Chrome, Safari, Opera
-                document.webkitExitFullscreen();
-            } else if (document.msExitFullscreen) { // IE/Edge
-                document.msExitFullscreen();
-            }
+            object.resize(); // Resize the game objects
         }
     }
 };

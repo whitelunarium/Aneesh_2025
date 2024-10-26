@@ -4,8 +4,6 @@ import Background from './Background.js';
 import PlayerOne from './PlayerOne.js';
 import PlayerTwo from './PlayerTwo.js';
 import NpcFrog from './NpcFrog.js';
-// import Maze from './Maze.js';
-
 
 class GameLevelWater {
   constructor(path) {
@@ -23,14 +21,6 @@ class GameLevelWater {
         src: image_src_water,
         pixels: {height: 580, width: 1038}
     };
-
-    // Maze data
-    // const image_src_maze = path + "/images/rpg/Maze_Background.png";
-    // const image_data_maze = {
-        // name: 'maze',
-        // src: image_src_maze,
-        // pixels: {height: 277, width: 498}
-    // };
 
     // Player 1 sprite data (turtle)
     const TURTLE_SCALE_FACTOR = 16;

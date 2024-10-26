@@ -101,7 +101,7 @@ class NpcFrog extends GameObject {
             });
             // Join all player names inside the proximity
             if (names.length > 0) {
-                this.handleResponse(`Beat the maze before you die. You get three lives!`);
+                this.handleResponse(`Hello, ${names.join(', ')}`);
             }
         }
     }
@@ -117,12 +117,9 @@ export default NpcFrog;
 function showCustomAlert(message) {
     const alertBox = document.getElementById('custom-alert');
     const alertMessage = document.getElementById('custom-alert-message');
-    
-    // Use innerHTML to allow HTML formatting in the message
-    alertMessage.innerHTML = message;
+    alertMessage.textContent = message;
     alertBox.style.display = 'block';
 }
-
 
 /**
  * Close the custom alert.
@@ -131,4 +128,3 @@ function closeCustomAlert() {
     const alertBox = document.getElementById('custom-alert');
     alertBox.style.display = 'none';
 }
-

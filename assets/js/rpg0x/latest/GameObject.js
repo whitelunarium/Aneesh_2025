@@ -362,16 +362,16 @@ class GameObject {
                 this: {
                     id: this.canvas.id,
                     top: thisRect.bottom > otherRect.top,
-                    bottom: (thisRect.bottom <= otherRect.top) && !(Math.abs(thisRect.bottom - otherRect.bottom) <= GameEnv.gravity),
+                    bottom: thisRect.bottom <= otherRect.top,
                     left: thisCenterX > otherCenterX,
-                    right: thisCenterX < otherCenterX,
+                    right: thisCenterX <= otherCenterX,
                 },
                 other: {
                     id: other.canvas.id,
                     top: thisRect.bottom < otherRect.top,
-                    bottom: (thisRect.bottom >= otherRect.top) && !(Math.abs(thisRect.bottom - otherRect.bottom) <= GameEnv.gravity),
+                    bottom: thisRect.bottom >= otherRect.top,
                     left: thisCenterX < otherCenterX, 
-                    right: thisCenterX > otherCenterX,
+                    right: thisCenterX >= otherCenterX,
                 },
             },
         };
@@ -448,20 +448,36 @@ class GameObject {
             // 1. Player is on top of npc
             case "npc":
             case "player":
-                // Player is on top of npc 
-                if (this.collisionData.touchPoints.this.onTopofOther) {
-                    this.state.movement = { up: true, down: false, left: true, right: true};
-                
-                } else if (this.collisionData.touchPoints.this.bottom) {
-                    this.state.movement = { up: false, down: true, left: true, right: true};
 
-                // Player is touching the npc with right side
-                } else if (this.collisionData.touchPoints.this.right) {
-                    this.state.movement = { up: true, down: true, left: true, right: false };
+                if (this.collisionData.touchPoints.this.top) {
+                    this.state.movement = { up: true, down: false, left: true, right: true};
+                    if (this.velocity.y < 0) {
+                        this.velocity.y = 0;
+                    }
                 
-                // Player is touching the npc with left side
-                } else if (this.collisionData.touchPoints.this.left) {
+                }
+
+                if (this.collisionData.touchPoints.this.bottom) {
+                    this.state.movement = { up: false, down: true, left: true, right: true};
+                    if (this.velocity.y > 0) {
+                        this.velocity.y = 0;
+                    }
+
+                } 
+                
+                if (this.collisionData.touchPoints.this.right) {
+                    this.state.movement = { up: true, down: true, left: true, right: false };
+                    if (this.velocity.x > 0) {
+                        this.velocity.x = 0;
+                    }
+                
+                }
+                
+                if (this.collisionData.touchPoints.this.left) {
                     this.state.movement = { up: true, down: true, left: false, right: true};
+                    if (this.velocity.x < 0) {
+                        this.velocity.x = 0;
+                    }
                 }
                 break;
         }
