@@ -15,7 +15,7 @@ class GameLevelWater {
     let height = GameEnv.innerHeight;
 
     // Background data
-    const image_src_water = path + "/images/rpg/topview.jpg";
+    const image_src_water = path + "/images/rpg/41524.jpg";
     const image_data_water = {
         name: 'water',
         src: image_src_water,
