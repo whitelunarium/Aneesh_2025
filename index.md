@@ -256,6 +256,20 @@ This blog contains my journey into Coding.
     </a>
 </div>
 
+### Homework
+
+> Here are my homeworks from each lesson. Click to view each notebook.
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <a href="https://github.com/whitelunarium/Aneesh_2025/tree/main/_notebooks/Foundation/Lessons" style="text-decoration: none;">
+        <div class="button" style="background-color: #3498db; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+            Lessons
+        </div>
+    </a>
+</div>
+
+
+
 <style>
   /* Apply hover effect on the button to scale it */
   .button:hover {

@@ -3,57 +3,25 @@ layout: base
 title: RPG v0.3
 permalink: /rpg/latest
 ---
+<script type = "module">
+import PlayerOne from '{{site.baseurl}}/assets/js/rpg0x/latest/PlayerOne.js';
+import PlayerTwo from '{{site.baseurl}}/assets/js/rpg0x/latest/PlayerTwo.js';
 
-<script>
-        // Player setup
-        const player = { 
-            x: 50, 
-            y: canvas.height / 2, 
-            width: 40, 
-            height: 40, 
-            speed: 5 
-        };
-
-        // Projectile setup
-        const player2 = {
-            x: 50,
-            y: canvas.height / 2,
-            width: 40,
-            height: 40,
-            speed: 5 
-        };
-
-          let gameRunning = true;
-        let survivalTime = 0;
-        let lastUpdateTime = Date.now();
-
-        // Main game loop
-       function gameLoop() {
-            if (gameRunning) {
-                checkCollision();
-
-                if (gameRunning = false) {
-                    alert("You died!");
-                    if (confirm("Play again?")) resetGame();
-                }
+function checkCollision() {
+            if (
+                PlayerOne.x < PlayerTwo.x + PlayerTwo.width &&
+                PlayerOne.x + PlayerOne.width > PlayerTwo.x &&
+                PlayerOne.y < PlayerTwo.y + PlayerTwo.height &&
+                PlayerOne.y + PlayerOne.height > PlayerTwo.y
+            ) {
+                alert("Game over! You were caught.");
+            }
+        }
+        function gameLoop() {
+            checkCollision();
 
                 requestAnimationFrame(gameLoop);
             }
-        }
-
-
-
-    // Check for collisions
-        function checkCollision() {
-            if (
-                player.x < projectile.x + projectile.width &&
-                player.x + player.width > projectile.x &&
-                player.y < projectile.y + projectile.height &&
-                player.y + player.height > projectile.y
-            ) 
-        }
-
-        
 </script>
 
 <style>
