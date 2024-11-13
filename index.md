@@ -196,19 +196,19 @@ This blog contains my journey into Coding.
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/home" style="text-decoration: none;">
-        <div class="button" style="background-color: #12886d; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+        <div class="button" style="background: linear-gradient(145deg, #1abc9c, #16a085); color: white; padding: 12px 24px; border-radius: 10px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
             Student Home
         </div>
     </a>
 
     <a href="{{site.baseurl}}/about" style="text-decoration: none;">
-        <div class="button" style="background-color: #f39c12; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+        <div class="button" style="background: linear-gradient(145deg, #f39c12, #e67e22); color: white; padding: 12px 24px; border-radius: 10px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
             About Me
         </div>
     </a>
 
     <a href="{{site.baseurl}}/coding" style="text-decoration: none;">
-        <div class="button" style="background-color: #3498db; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+        <div class="button" style="background: linear-gradient(145deg, #3498db, #2980b9); color: white; padding: 12px 24px; border-radius: 10px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
             Coding
         </div>
     </a>
@@ -219,13 +219,13 @@ This blog contains my journey into Coding.
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/rpg" style="text-decoration: none;">
-        <div class="button" style="background-color: #8e44ad; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+        <div class="button" style="background: linear-gradient(145deg, #8e44ad, #9b59b6); color: white; padding: 12px 24px; border-radius: 10px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
             RPG
         </div>
     </a>
 
     <a href="{{site.baseurl}}/snake" style="text-decoration: none;">
-        <div class="button" style="background-color: #2ecc71; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+        <div class="button" style="background: linear-gradient(145deg, #27ae60, #2ecc71); color: white; padding: 12px 24px; border-radius: 10px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
             Snake
         </div>
     </a>
@@ -233,8 +233,27 @@ This blog contains my journey into Coding.
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="{{site.baseurl}}/rpg/latest" style="text-decoration: none;">
-        <div class="button" style="background-color: #e74c3c; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+        <div class="button" style="background: linear-gradient(145deg, #e74c3c, #c0392b); color: white; padding: 12px 24px; border-radius: 10px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
             Latest RPG
+        </div>
+    </a>
+</div>
+
+## Experiments
+> Here are my experimental games, that I worked on for fun!
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <a href="{{site.baseurl}}/rps" style="text-decoration: none;">
+        <div class="button" style="background: linear-gradient(145deg, #16a085, #1abc9c); color: white; padding: 12px 24px; border-radius: 10px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+            Rock Paper Scissors
+        </div>
+    </a>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <a href="{{site.baseurl}}/tictactoe" style="text-decoration: none;">
+        <div class="button" style="background: linear-gradient(145deg, #f39c12, #e67e22); color: white; padding: 12px 24px; border-radius: 10px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+            Tic Tac Toe
         </div>
     </a>
 </div>
@@ -244,13 +263,13 @@ This blog contains my journey into Coding.
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="https://github.com/whitelunarium/Aneesh_2025/blob/main/_notebooks/Foundation/Sprint1" style="text-decoration: none;">
-        <div class="button" style="background-color: #f1c40f; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+        <div class="button" style="background: linear-gradient(145deg, #f1c40f, #f39c12); color: white; padding: 12px 24px; border-radius: 10px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
             Sprint 1
         </div>
     </a>
 
     <a href="https://github.com/whitelunarium/Aneesh_2025/blob/main/_notebooks/Foundation/Sprint2" style="text-decoration: none;">
-        <div class="button" style="background-color: #d35400; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+        <div class="button" style="background: linear-gradient(145deg, #d35400, #e67e22); color: white; padding: 12px 24px; border-radius: 10px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
             Sprint 2
         </div>
     </a>
@@ -262,25 +281,28 @@ This blog contains my journey into Coding.
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="https://github.com/whitelunarium/Aneesh_2025/tree/main/_notebooks/Foundation/Lessons" style="text-decoration: none;">
-        <div class="button" style="background-color: #3498db; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.3s;">
+        <div class="button" style="background: linear-gradient(145deg, #3498db, #2980b9); color: white; padding: 12px 24px; border-radius: 10px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
             Lessons
         </div>
     </a>
 </div>
 
-
-
 <style>
   /* Apply hover effect on the button to scale it */
   .button:hover {
-    transform: scale(1.2); /* Increase size by 20% */
+    transform: scale(1.1); /* Slight increase in size */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Slight shadow increase */
   }
 
   /* Ensure buttons in the Home section are aligned side by side */
   .button {
     display: inline-block; /* Make the buttons inline elements */
+    font-size: 16px; /* Adjust font size for better readability */
+    text-align: center; /* Ensure text is centered */
   }
 </style>
+
+
 
 <!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
