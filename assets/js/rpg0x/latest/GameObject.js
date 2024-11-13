@@ -482,44 +482,5 @@ class GameObject {
                 break;
         }
     }
- 
-/* Collision checks
- * uses GameObject isCollision to detect hit
- * calls collisionAction on hit
- */
-collisionChecks() {
-    for (var gameObj of GameEnv.gameObjects) {
-        if (gameObj.canvas && this !== gameObj) {
-            this.isCollision(gameObj);
-            if (this.collisionData.hit) {
-                if (this.canvas.id.includes("player") && gameObj.canvas.id.includes("player")) {
-                    this.handlePlayerCollision(gameObj);
-                } else {
-                    this.collisionAction();
-                }
-            }
-        }
-    }
 }
-
-/**
- * Handles collision between player objects specifically.
- * @param {GameObject} otherPlayer - The other player object colliding with this player.
- */
-handlePlayerCollision(otherPlayer) {
-    console.log("Collision between players detected!");
-
-    // Example reaction: Stop both players' movements
-    this.velocity = { x: 0, y: 0 };
-    otherPlayer.velocity = { x: 0, y: 0 };
-
-    // Optionally, update state or trigger specific events for player collision
-    this.state.collision = "playerCollision";
-    otherPlayer.state.collision = "playerCollision";
-}
-
-
-}
-
-
 export default GameObject;

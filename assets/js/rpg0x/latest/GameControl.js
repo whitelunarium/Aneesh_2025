@@ -56,6 +56,8 @@ const GameControl = {
     }
 };
 
+
+
 // Detect window resize events and call the resize function.
 window.addEventListener('resize', GameControl.resize.bind(GameControl));
 

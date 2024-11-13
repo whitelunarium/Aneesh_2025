@@ -50,10 +50,6 @@ function checkCollision() {
     <canvas id='gameCanvas'></canvas>
 </div>
 
-<div id="custom-alert" class="custom-alert">
-    <button onclick="closeCustomAlert()" id="custom-alert-message"></button>
-</div>
-
 <script type="module">
     import GameControl from '{{site.baseurl}}/assets/js/rpg0x/latest/GameControl.js';
 
@@ -62,4 +58,51 @@ function checkCollision() {
     // Start game engine
     GameControl.start(path);
 
+    // Full-screen toggle function
+    function toggleFullscreen() {
+        const gameContainer = document.getElementById('gameContainer');
+        if (!document.fullscreenElement) {
+            if (gameContainer.requestFullscreen) {
+                gameContainer.requestFullscreen();
+            } else if (gameContainer.mozRequestFullScreen) {
+                gameContainer.mozRequestFullScreen();
+            } else if (gameContainer.webkitRequestFullscreen) {
+                gameContainer.webkitRequestFullscreen();
+            } else if (gameContainer.msRequestFullscreen) {
+                gameContainer.msRequestFullscreen();
+            }
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+    }
+
+    // Detect "F" key press to toggle full-screen mode
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'f' || event.key === 'F') {
+            toggleFullscreen();
+        }
+    });
 </script>
+
+<style>
+    #gameContainer {
+        width: 100vw; /* Full viewport width */
+        height: 100vh; /* Full viewport height */
+        position: relative;
+        overflow: hidden;
+    }
+
+    #gameCanvas {
+        width: 100%; /* Stretch to full container width */
+        height: 100%; /* Stretch to full container height */
+        display: block;
+    }
+</style>
