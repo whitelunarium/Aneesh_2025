@@ -287,6 +287,18 @@ This blog contains my journey into Coding.
     </a>
 </div>
 
+### Sprint 4
+
+> Here is my Sprint 4 Review!
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <a href="{{site.baseurl}}/Sprint4" style="text-decoration: none;">
+        <div class="button" style="background: linear-gradient(145deg, #16a085, #1abc9c); color: white; padding: 12px 24px; border-radius: 10px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+            Sprint 4
+        </div>
+    </a>
+</div>
+
 <style>
   /* Apply hover effect on the button to scale it */
   .button:hover {
