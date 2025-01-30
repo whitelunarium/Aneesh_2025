@@ -48,7 +48,7 @@ class GameLevelWater {
         SCALE_FACTOR: 12,
         STEP_FACTOR: 400, // 400
         ANIMATION_RATE: 50,
-        pixels: {height: 471, width: 530},
+        pixels: {height: 471, width: 530},  
         INIT_POSITION: { x: 0, y: 0 },
         orientation: {rows: 8, columns: 9 },
         down: {row: 0, start: 0, columns: 3 },  // 1st row
