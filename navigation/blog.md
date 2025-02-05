@@ -103,6 +103,35 @@ The player (dog) will live start in a land filled with lush vegetation with GitH
 
 Interaction will require proximety and will stop game from time/destruction. There will need to be input support for game intractions and game results. Results will be stored in local storage and there will be a time based history for user(s). Solve all the problems from the NPCs and you can leave the world and progress until Game Over.
 
+# Github Checklist
+## Week #22
+---
+- [x] Create a new level consisting of the sprites and backgrounds used
+   - [x] Create an NPC sprite with an interaction zone
+- [ ] Implement event handling for player interaction with the NPC.
+   - [ ] Define the destination where the player will be teleported upon interaction.
+   - [ ] Implement a teleportation function that moves the player to the battle location.
+   - [ ] Load the battle scene upon teleportation.
+- [ ] Spawn the NPC as a battle opponent.
+- [ ] Set up the battle UI and mechanics (health bars, attack options, etc.).
+## Week #23
+---
+- [ ] Implement a turn-based or real-time battle system.
+- [ ] Add an NPC attack animation
+- [ ] Implement player attack options (basic attacks, abilities, items, etc. FOR NOW IT JUST ONE ATTACK)
+- [ ] Implement win/loss conditions (e.g., if player/NPC HP reaches 0, trigger victory or defeat event).
+## Week #24 (Ski Week)
+---
+- [ ] Create a final level to show the aftermath of the battle
+   - [ ] If NPC is defeated then show an evolved form of the player
+   - [ ] If the player is defeated show NPC dialogue (preferably "Better luck next time")
+
+   # Current Changes Made:
+- Created new movement to make players move more realistically. The movement was modified to match the side view instead of the top view of a 2D game.
+![Image](https://github.com/user-attachments/assets/c93a90b3-6e39-48c8-b200-44b4764564ad)
+- Created a new level file (Following the theme of GameLevelWater/Desert, but the characters will have different purposes. A dog will learn about its ancestors by meeting a wolf, the wolf teaches the dog how to survive by fighting.)
+![Image](https://github.com/user-attachments/assets/431559d3-740a-45ff-a0e3-3c95d66a9c7e)
+
 <!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
         repo="{{ site.github_username }}/{{ site.github_repo | default: site.baseurl | remove: "/" }}"
