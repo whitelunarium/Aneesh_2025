@@ -24,7 +24,11 @@ class Player extends Character {
      */
     constructor(data = null) {
         super(data);
-        this.keypress = data?.keypress || {up: 87, left: 65, down: 83, right: 68};
+        this.keypress = data?.keypress || {up: 87, left: 65, right: 68};
+        this.gravity = 0.3; // Gravity force
+        this.jumpHeight = 6; // Jump height
+        this.isJumping = false; // Track if the player is jumping
+        this.xVelocity = 2; // Horizontal velocity
         this.bindEventListeners();
     }
 
@@ -43,21 +47,15 @@ class Player extends Character {
     handleKeyDown({ keyCode }) {
         switch (keyCode) {
             case this.keypress.up:
-                this.velocity.y -= this.yVelocity;
-                this.direction = 'up';
+                this.velocity.y = -this.jumpHeight; // Start jumping
+                this.isJumping = true;
                 break;
             case this.keypress.left:
-                this.velocity.x -= this.xVelocity;
-                this.direction = 'left';
+                this.velocity.x = -this.xVelocity; // Move left
                 break;
-            case this.keypress.down:
-                this.velocity.y += this.yVelocity;
-                this.direction = 'down';
-                break;
-            case this.keypress.right:
-                this.velocity.x += this.xVelocity;
-                this.direction = 'right';
-                break;
+                case this.keypress.right:
+                    this.velocity.x = this.xVelocity; // Move right
+                    break;
         }
     }
 
@@ -84,6 +82,13 @@ class Player extends Character {
                 break;
         }
     }
+
+        checkJump() {
+            if (this.isJumping) {
+                this.velocity.y += this.gravity; // Apply gravity (falling effect)
+            }
+        }
+    
 
 }
 

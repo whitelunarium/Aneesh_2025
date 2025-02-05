@@ -1,0 +1,231 @@
+<mxfile host="65bd71144e">
+    <diagram id="GameLevelGrassland" name="Grassland Level">
+        <mxGraphModel dx="1646" dy="1197" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" background="none" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="221" value="&lt;font color=&quot;#fdfcfc&quot;&gt;gameEnv.js&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="530" y="20" width="200" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="227" value="Class: GameEnv" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="221">
+                    <mxGeometry x="20" y="32" width="150" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="228" value="canvas, ctx&lt;br&gt;innerHeight&lt;br&gt;innerWidth&lt;br&gt;-----------------------------------&lt;br&gt;size()&lt;br&gt;resize()&lt;br&gt;clear()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="227">
+                    <mxGeometry y="30" width="150" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="231" value="Background.js" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="400" width="200" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="247" value="Class: Background" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="231">
+                    <mxGeometry x="10" y="34" width="180" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="248" value="image, image.src&lt;br&gt;------------------------------------------" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="247">
+                    <mxGeometry y="30" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="249" value="draw()&lt;br&gt;resize()&lt;br&gt;destroy()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="247">
+                    <mxGeometry y="60" width="180" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="240" style="edgeStyle=none;rounded=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontColor=#fdfcfc;" edge="1" parent="1" source="232">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="310" y="453" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="330" y="320"/>
+                            <mxPoint x="280" y="320"/>
+                            <mxPoint x="280" y="380"/>
+                            <mxPoint x="280" y="453"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="260" style="edgeStyle=none;rounded=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.138;entryDx=0;entryDy=0;entryPerimeter=0;fontColor=#fdfcfc;" edge="1" parent="1" source="232" target="257">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="330" y="320"/>
+                            <mxPoint x="520" y="320"/>
+                            <mxPoint x="520" y="454"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="232" value="GameLevelGrassland.js" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="50" width="200" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="223" value="Class: GameLevelGrassland" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="232">
+                    <mxGeometry x="10" y="28" width="180" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="224" value="width, height,&amp;nbsp;&lt;br&gt;------------------------------------------" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="223">
+                    <mxGeometry y="30" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="225" value="GameEnv[]&lt;br&gt;Background[]&amp;nbsp;&lt;br&gt;Player[]&lt;br&gt;Npc[]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="223">
+                    <mxGeometry y="60" width="180" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="241" style="edgeStyle=none;rounded=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.151;entryDx=0;entryDy=0;entryPerimeter=0;fontColor=#fdfcfc;" edge="1" parent="1" source="225" target="227">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="450" y="183"/>
+                            <mxPoint x="450" y="73"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="242" value="Player.js" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;startSize=23;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="630" width="200" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="250" value="Class: Player" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="242">
+                    <mxGeometry x="10" y="36" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="178" value="bindEventListeners()&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=0;sketch=1;curveFitting=1;jiggle=2;rounded=0;" vertex="1" parent="250">
+                    <mxGeometry y="30" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="243" value="Npc.js" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="1">
+                    <mxGeometry x="780" y="400" width="200" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="253" value="Class: Npc" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="243">
+                    <mxGeometry x="10" y="35" width="180" height="86" as="geometry"/>
+                </mxCell>
+                <mxCell id="175" value="bindEventListeners()&#10;goNextDialogue()&#10;shareSpeech()&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=0;sketch=1;curveFitting=1;jiggle=2;rounded=0;" vertex="1" parent="253">
+                    <mxGeometry y="30" width="180" height="56" as="geometry"/>
+                </mxCell>
+                <mxCell id="261" style="edgeStyle=none;rounded=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=-0.006;entryY=0.129;entryDx=0;entryDy=0;entryPerimeter=0;fontColor=#fdfcfc;" edge="1" parent="1" source="256" target="250">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="640" y="620"/>
+                            <mxPoint x="620" y="620"/>
+                            <mxPoint x="620" y="685"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="262" style="edgeStyle=none;rounded=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=-0.003;entryY=0.128;entryDx=0;entryDy=0;entryPerimeter=0;fontColor=#fdfcfc;" edge="1" parent="1" source="256" target="253">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="640" y="620"/>
+                            <mxPoint x="760" y="620"/>
+                            <mxPoint x="760" y="454"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="256" value="Character.js" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;startSize=23;" vertex="1" parent="1">
+                    <mxGeometry x="540" y="400" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="257" value="Class: Character" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="256">
+                    <mxGeometry x="10" y="36" width="180" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="258" value="x, y&lt;br&gt;canvas{}&lt;br&gt;animation{}, direction{}&lt;br&gt;------------------------------------------" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="257">
+                    <mxGeometry y="30" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="259" value="draw()&lt;br&gt;update()&lt;br&gt;resize()&lt;br&gt;destroy()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="257">
+                    <mxGeometry y="90" width="180" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="316" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/jpeg,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;" vertex="1" parent="1">
+                    <mxGeometry width="1187.16" height="790" as="geometry"/>
+                </mxCell>
+                <mxCell id="343" value="&lt;font color=&quot;#fdfcfc&quot;&gt;gameEnv.js&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="510" y="40" width="200" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="344" value="Class: GameEnv" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="343">
+                    <mxGeometry x="20" y="32" width="150" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="345" value="canvas, ctx&lt;br&gt;innerHeight&lt;br&gt;innerWidth&lt;br&gt;-----------------------------------&lt;br&gt;size()&lt;br&gt;resize()&lt;br&gt;clear()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="344">
+                    <mxGeometry y="30" width="150" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="346" value="Background.js" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="420" width="200" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="347" value="Class: Background" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="346">
+                    <mxGeometry x="10" y="34" width="180" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="348" value="image, image.src&lt;br&gt;------------------------------------------" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="347">
+                    <mxGeometry y="30" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="349" value="draw()&lt;br&gt;resize()&lt;br&gt;destroy()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="347">
+                    <mxGeometry y="60" width="180" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="350" style="edgeStyle=none;rounded=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontColor=#fdfcfc;" edge="1" parent="1" source="352">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="289.9999999999998" y="473" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="310" y="340"/>
+                            <mxPoint x="260" y="340"/>
+                            <mxPoint x="260" y="400"/>
+                            <mxPoint x="260" y="473"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="351" style="edgeStyle=none;rounded=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.138;entryDx=0;entryDy=0;entryPerimeter=0;fontColor=#fdfcfc;" edge="1" parent="1" source="352" target="366">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="310" y="340"/>
+                            <mxPoint x="500" y="340"/>
+                            <mxPoint x="500" y="474"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="352" value="GameLevelGrassland.js" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="70" width="200" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="353" value="Class: GameLevelGrassland" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="352">
+                    <mxGeometry x="10" y="28" width="180" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="354" value="width, height,&amp;nbsp;&lt;br&gt;------------------------------------------" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="353">
+                    <mxGeometry y="30" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="355" value="GameEnv[]&lt;br&gt;Background[]&amp;nbsp;&lt;br&gt;Player[]&lt;br&gt;Npc[]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="353">
+                    <mxGeometry y="60" width="180" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="356" style="edgeStyle=none;rounded=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.151;entryDx=0;entryDy=0;entryPerimeter=0;fontColor=#fdfcfc;" edge="1" parent="1" source="355" target="344">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="430" y="203"/>
+                            <mxPoint x="430" y="93"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="357" value="Player.js" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;startSize=23;" vertex="1" parent="1">
+                    <mxGeometry x="620" y="650" width="200" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="358" value="Class: Player" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="357">
+                    <mxGeometry x="10" y="36" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="359" value="bindEventListeners()&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=0;sketch=1;curveFitting=1;jiggle=2;rounded=0;" vertex="1" parent="358">
+                    <mxGeometry y="30" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="360" value="Npc.js" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="1">
+                    <mxGeometry x="760" y="420" width="200" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="361" value="Class: Npc" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="360">
+                    <mxGeometry x="10" y="35" width="180" height="86" as="geometry"/>
+                </mxCell>
+                <mxCell id="362" value="bindEventListeners()&#10;goNextDialogue()&#10;shareSpeech()&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=0;sketch=1;curveFitting=1;jiggle=2;rounded=0;" vertex="1" parent="361">
+                    <mxGeometry y="30" width="180" height="56" as="geometry"/>
+                </mxCell>
+                <mxCell id="363" style="edgeStyle=none;rounded=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=-0.006;entryY=0.129;entryDx=0;entryDy=0;entryPerimeter=0;fontColor=#fdfcfc;" edge="1" parent="1" source="365" target="358">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="620" y="640"/>
+                            <mxPoint x="600" y="640"/>
+                            <mxPoint x="600" y="705"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="364" style="edgeStyle=none;rounded=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=-0.003;entryY=0.128;entryDx=0;entryDy=0;entryPerimeter=0;fontColor=#fdfcfc;" edge="1" parent="1" source="365" target="361">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="620" y="640"/>
+                            <mxPoint x="740" y="640"/>
+                            <mxPoint x="740" y="474"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="365" value="Character.js" style="swimlane;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;startSize=23;" vertex="1" parent="1">
+                    <mxGeometry x="520" y="420" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="366" value="Class: Character" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="365">
+                    <mxGeometry x="10" y="36" width="180" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="367" value="x, y&lt;br&gt;canvas{}&lt;br&gt;animation{}, direction{}&lt;br&gt;------------------------------------------" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="366">
+                    <mxGeometry y="30" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="368" value="draw()&lt;br&gt;update()&lt;br&gt;resize()&lt;br&gt;destroy()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;rounded=1;fontColor=#fdfcfc;" vertex="1" parent="366">
+                    <mxGeometry y="90" width="180" height="70" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

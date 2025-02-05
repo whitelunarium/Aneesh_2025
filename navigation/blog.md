@@ -91,6 +91,17 @@ permalink: /blogs/
 - along the puzzle I want to have a trap like one that shows up out of nowhere when you get close enough to it
 - I also want to create a two player game using WASD and the arrow keys, where one is the one trying to overcome the puzzle and the other trying to stop the one tryping to overcome the puzzle
 
+---
+
+# Overall Game Changes: 
+- Code to make 2D movement better
+
+## Game Idea
+I want to add on to the learning adventure theme.
+
+The player (dog) will live start in a land filled with lush vegetation with GitHub and Linux and progress to Jupyter and JavaScript land world. There will be NPC characters in the each world that will help the turtle solve CompSci problems until he is able to leave the world. There could be a second player, that you can compete against.
+
+Interaction will require proximety and will stop game from time/destruction. There will need to be input support for game intractions and game results. Results will be stored in local storage and there will be a time based history for user(s). Solve all the problems from the NPCs and you can leave the world and progress until Game Over.
 
 <!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
