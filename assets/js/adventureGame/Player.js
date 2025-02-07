@@ -87,35 +87,6 @@ class Player extends Character {
 
 }
 
-updateAnimationState(key) {
-        switch (key) {
-            case 'a':
-            case 'd':
-                this.state.animation = 'walk';
-                GameEnv.playerAttack = false;
-                break;
-            case 'w':
-                if (this.state.movement.up == false) {
-                this.state.movement.up = true;
-                this.state.animation = 'jump';
-                }
-                GameEnv.playerAttack = false;
-                break;
-            case 's':
-                if ("a" in this.pressedKeys || "d" in this.pressedKeys) {
-                this.state.animation = 'run';
-                }
-                GameEnv.playerAttack = false;
-                break;
-            case 'b':
-                this.state.animation = 'attack';  // Always trigger attack when b is pressed
-                GameEnv.playerAttack = true;
-                break;
-            default:
-                this.state.animation = 'idle';
-                GameEnv.playerAttack = false;
-                break;
-        }
-    }
+
 
 export default Player;
