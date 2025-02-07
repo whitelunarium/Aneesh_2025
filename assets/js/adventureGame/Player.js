@@ -24,11 +24,7 @@ class Player extends Character {
      */
     constructor(data = null) {
         super(data);
-        this.keypress = data?.keypress || {up: 87, left: 65, right: 68};
-        this.gravity = 0.3; // Gravity force
-        this.jumpHeight = 6; // Jump height
-        this.isJumping = false; // Track if the player is jumping
-        this.xVelocity = 2; // Horizontal velocity
+        this.keypress = data?.keypress || {up: 87, left: 65, down: 83, right: 68};
         this.bindEventListeners();
     }
 
@@ -47,15 +43,21 @@ class Player extends Character {
     handleKeyDown({ keyCode }) {
         switch (keyCode) {
             case this.keypress.up:
-                this.velocity.y = -this.jumpHeight; // Start jumping
-                this.isJumping = true;
+                this.velocity.y -= this.yVelocity;
+                this.direction = 'up';
                 break;
             case this.keypress.left:
-                this.velocity.x = -this.xVelocity; // Move left
+                this.velocity.x -= this.xVelocity;
+                this.direction = 'left';
                 break;
-                case this.keypress.right:
-                    this.velocity.x = this.xVelocity; // Move right
-                    break;
+            case this.keypress.down:
+                this.velocity.y += this.yVelocity;
+                this.direction = 'down';
+                break;
+            case this.keypress.right:
+                this.velocity.x += this.xVelocity;
+                this.direction = 'right';
+                break;
         }
     }
 
@@ -83,13 +85,37 @@ class Player extends Character {
         }
     }
 
-        checkJump() {
-            if (this.isJumping) {
-                this.velocity.y += this.gravity; // Apply gravity (falling effect)
-            }
-        }
-    
-
 }
+
+updateAnimationState(key) {
+        switch (key) {
+            case 'a':
+            case 'd':
+                this.state.animation = 'walk';
+                GameEnv.playerAttack = false;
+                break;
+            case 'w':
+                if (this.state.movement.up == false) {
+                this.state.movement.up = true;
+                this.state.animation = 'jump';
+                }
+                GameEnv.playerAttack = false;
+                break;
+            case 's':
+                if ("a" in this.pressedKeys || "d" in this.pressedKeys) {
+                this.state.animation = 'run';
+                }
+                GameEnv.playerAttack = false;
+                break;
+            case 'b':
+                this.state.animation = 'attack';  // Always trigger attack when b is pressed
+                GameEnv.playerAttack = true;
+                break;
+            default:
+                this.state.animation = 'idle';
+                GameEnv.playerAttack = false;
+                break;
+        }
+    }
 
 export default Player;
