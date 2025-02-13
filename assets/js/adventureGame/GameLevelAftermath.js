@@ -3,7 +3,7 @@ import Background from './Background.js';
 import Player from './Player.js';
 import Npc from './Npc.js';
 
-class GameLevelGrassland {
+class GameLevelAftermath {
     constructor(path) {
       const header = document.querySelector('header');
       const footer = document.querySelector('footer');
@@ -27,7 +27,7 @@ class GameLevelGrassland {
       const learningdog_SCALE_FACTOR = 5;
       const sprite_data_learningdog = {
           id: 'Learning Dog',
-          greeting: "I'm so weak! Please help me on my journey to get stronger",
+          greeting: "I have beat you!",
           src: sprite_src_learningdog,
           SCALE_FACTOR: learningdog_SCALE_FACTOR,
           STEP_FACTOR: 1000,
@@ -48,7 +48,7 @@ class GameLevelGrassland {
       const sprite_src_TeachingWolf = path + "/images/gamify/Download87405.png"; // be sure to include the path
       const sprite_data_TeachingWolf = {
           id: 'TeachingWolf',
-          greeting: "What are you looking at, do you wanna fight? Press ESC to fight me!",
+          greeting: "Contragulations, you have beat me...",
           src: sprite_src_TeachingWolf,
           SCALE_FACTOR: 3,  // Adjust this based on your scaling needs
           ANIMATION_RATE: 50,
@@ -119,4 +119,4 @@ class GameLevelGrassland {
   
   }
   
-  export default GameLevelGrassland;
+  export default GameLevelAftermath;

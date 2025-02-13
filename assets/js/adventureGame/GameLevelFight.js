@@ -3,7 +3,7 @@ import Background from './Background.js';
 import Player from './Player.js';
 import Npc from './Npc.js';
 
-class GameLevelGrassland {
+class GameLevelFight {
     constructor(path) {
       const header = document.querySelector('header');
       const footer = document.querySelector('footer');
@@ -13,12 +13,12 @@ class GameLevelGrassland {
   
   
       // Background data
-      const image_src_grassland = path + "/images/gamify/AouGOg.png"; // be sure to include the path
-      const image_data_grassland = {
-          name: 'grassland',
-          greeting: "Welcome to the grasslands! The rolling fields are lush and green, teeming with life and adventure at every turn!",
-          src: image_src_grassland,
-          pixels: {height: 1440, width: 2560}
+      const image_src_fightbackground = path + "/images/gamify/figtbackground.png"; // be sure to include the path
+      const image_data_fightbackground = {
+          name: 'fightbackground',
+          greeting: "Fight!",
+          src: image_src_fightbackground,
+          pixels: {height: 316, width: 476}
       };
   
   
@@ -27,12 +27,12 @@ class GameLevelGrassland {
       const learningdog_SCALE_FACTOR = 5;
       const sprite_data_learningdog = {
           id: 'Learning Dog',
-          greeting: "I'm so weak! Please help me on my journey to get stronger",
+          greeting: "I'm going to beat you!",
           src: sprite_src_learningdog,
           SCALE_FACTOR: learningdog_SCALE_FACTOR,
           STEP_FACTOR: 1000,
           ANIMATION_RATE: 50,
-          INIT_POSITION: { x: 0, y: 125 }, 
+          INIT_POSITION: { x: 300, y: 375 }, 
           pixels: {height: 254, width: 568},
           orientation: {rows: 4, columns: 9 },
           down: {row: 2, start: 0, columns: 9 },
@@ -45,17 +45,17 @@ class GameLevelGrassland {
   
   
       // NPC data for Tux 
-      const sprite_src_TeachingWolf = path + "/images/gamify/Download87405.png"; // be sure to include the path
+      const sprite_src_TeachingWolf = path + "/images/gamify/caveboss.png"; // be sure to include the path
       const sprite_data_TeachingWolf = {
           id: 'TeachingWolf',
-          greeting: "What are you looking at, do you wanna fight? Press ESC to fight me!",
+          greeting: "I'll pummel you!",
           src: sprite_src_TeachingWolf,
-          SCALE_FACTOR: 3,  // Adjust this based on your scaling needs
+          SCALE_FACTOR: 5,  // Adjust this based on your scaling needs
           ANIMATION_RATE: 50,
-          pixels: {height: 257, width: 577},
-          INIT_POSITION: { x: (width / 2), y: (height / 2)},
-          orientation: {rows: 4, columns: 9 },
-          down: {row: 2, start: 0, columns: 9 },  // This is the stationary npc, down is default 
+          pixels: {height: 359, width: 372},
+          INIT_POSITION: { x: 950, y: 250},
+          orientation: {rows: 4, columns: 6 },
+          down: {row: 0, start: 0, columns: 4 },  // This is the stationary npc, down is default 
           hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
           // Linux command quiz
           quiz: { 
@@ -110,7 +110,7 @@ class GameLevelGrassland {
   
       // List of objects defnitions for this level
       this.objects = [
-        { class: Background, data: image_data_grassland },
+        { class: Background, data: image_data_fightbackground },
         { class: Player, data: sprite_data_learningdog },
         { class: Npc, data: sprite_data_TeachingWolf },
        // { class: Npc, data: sprite_data_htmlhank }, 
@@ -119,4 +119,4 @@ class GameLevelGrassland {
   
   }
   
-  export default GameLevelGrassland;
+  export default GameLevelFight;

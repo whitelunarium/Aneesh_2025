@@ -1,4 +1,3 @@
-import GameEnv from './GameEnv.js';
 import Character from './Character.js';
 
 // Define non-mutable constants as defaults
@@ -16,7 +15,7 @@ const INIT_POSITION = { x: 0, y: 0 };
  * @method handleKeyDown - Handles key down events to change the object's velocity.
  * @method handleKeyUp - Handles key up events to stop the object's velocity.
  */
-class Player extends Character {
+class PlayerForBattle extends Character {
     /**
      * The constructor method is called when a new Player object is created.
      * 
@@ -41,54 +40,7 @@ class Player extends Character {
         addEventListener('keydown', this.handleKeyDown.bind(this));
         addEventListener('keyup', this.handleKeyUp.bind(this));
     }
-
-    handleKeyDown({ keyCode }) {
-        switch (keyCode) {
-            case this.keypress.up:
-                this.velocity.y -= this.yVelocity;
-                this.direction = 'up';
-                break;
-            case this.keypress.left:
-                this.velocity.x -= this.xVelocity;
-                this.direction = 'left';
-                break;
-            case this.keypress.down:
-                this.velocity.y += this.yVelocity;
-                this.direction = 'down';
-                break;
-            case this.keypress.right:
-                this.velocity.x += this.xVelocity;
-                this.direction = 'right';
-                break;
-        }
-    }
-
-    /**
-     * Handles key up events to stop the player's velocity.
-     * 
-     * This method stops the player's velocity based on the key released.
-     * 
-     * @param {Object} event - The keyup event object.
-     */
-    handleKeyUp({ keyCode }) {
-        switch (keyCode) {
-            case this.keypress.up:
-                this.velocity.y = 0;
-                break;
-            case this.keypress.left:
-                this.velocity.x = 0;
-                break;
-            case this.keypress.down: 
-                this.velocity.y = 0;
-                break;
-            case this.keypress.right: 
-                this.velocity.x = 0;
-                break;
-        }
-    }
-
 }
 
 
-
-export default Player;
+export default PlayerForBattle;
