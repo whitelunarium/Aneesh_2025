@@ -1,3 +1,4 @@
+import GameEnv from './GameEnv.js';
 import Character from './Character.js';
 
 // Define non-mutable constants as defaults
@@ -7,13 +8,7 @@ const ANIMATION_RATE = 1; // 1/nth of the frame rate
 const INIT_POSITION = { x: 0, y: 0 };
 
 /**
- * Player is a dynamic class that manages the data and events for objects like a player 
- * 
- * This class uses a classic Java class pattern which is nice for managing object data and events.
- * 
- * @method bindEventListeners - Binds key event listeners to handle object movement.
- * @method handleKeyDown - Handles key down events to change the object's velocity.
- * @method handleKeyUp - Handles key up events to stop the object's velocity.
+ * Player is a dynamic class that manages the data and events for objects like a player.
  */
 class PlayerForBattle extends Character {
     /**
@@ -23,24 +18,38 @@ class PlayerForBattle extends Character {
      */
     constructor(data = null) {
         super(data);
-        this.keypress = data?.keypress || {up: 87, left: 65, down: 83, right: 68};
+        this.keypress = data?.keypress || { up: 87, left: 65, down: 83, right: 68 };
         this.health = data?.health || 100; // Default health value
         this.attack = data?.attack || 10; // Default attack value
+        this.velocity = { x: 0, y: 0 }; // Ensure velocity is set to zero
         this.bindEventListeners();
     }
 
-
     /**
-     * Binds key event listeners to handle object movement.
-     * 
-     * This method binds keydown and keyup event listeners to handle object movement.
-     * The .bind(this) method ensures that 'this' refers to the object object.
+     * Binds key event listeners, but movement is disabled.
      */
     bindEventListeners() {
         addEventListener('keydown', this.handleKeyDown.bind(this));
         addEventListener('keyup', this.handleKeyUp.bind(this));
     }
-}
 
+    /**
+     * Handles key down events but prevents movement.
+     */
+    handleKeyDown(event) {
+        // Prevent movement by doing nothing
+        this.velocity.x = 0;
+        this.velocity.y = 0;
+    }
+
+    /**
+     * Handles key up events but ensures the player remains stationary.
+     */
+    handleKeyUp(event) {
+        // Ensure velocity stays at zero
+        this.velocity.x = 0;
+        this.velocity.y = 0;
+    }
+}
 
 export default PlayerForBattle;

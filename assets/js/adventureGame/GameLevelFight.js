@@ -1,6 +1,6 @@
 import GameEnv from './GameEnv.js';
 import Background from './Background.js';
-import Player from './Player.js';
+import PlayerForBattle from './PlayerforBattle.js';
 import Npc from './Npc.js';
 
 class GameLevelFight {
@@ -32,7 +32,7 @@ class GameLevelFight {
           SCALE_FACTOR: learningdog_SCALE_FACTOR,
           STEP_FACTOR: 1000,
           ANIMATION_RATE: 50,
-          INIT_POSITION: { x: 300, y: 375 }, 
+          INIT_POSITION: { x: 300, y: 350 }, 
           pixels: {height: 254, width: 568},
           orientation: {rows: 4, columns: 9 },
           down: {row: 2, start: 0, columns: 9 },
@@ -53,7 +53,7 @@ class GameLevelFight {
           SCALE_FACTOR: 5,  // Adjust this based on your scaling needs
           ANIMATION_RATE: 50,
           pixels: {height: 359, width: 372},
-          INIT_POSITION: { x: 950, y: 250},
+          INIT_POSITION: { x: 900, y: 200},
           orientation: {rows: 4, columns: 6 },
           down: {row: 0, start: 0, columns: 4 },  // This is the stationary npc, down is default 
           hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
@@ -111,7 +111,7 @@ class GameLevelFight {
       // List of objects defnitions for this level
       this.objects = [
         { class: Background, data: image_data_fightbackground },
-        { class: Player, data: sprite_data_learningdog },
+        { class: PlayerForBattle, data: sprite_data_learningdog },
         { class: Npc, data: sprite_data_TeachingWolf },
        // { class: Npc, data: sprite_data_htmlhank }, 
       ];
