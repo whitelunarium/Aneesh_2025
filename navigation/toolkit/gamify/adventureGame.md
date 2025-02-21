@@ -77,6 +77,33 @@ permalink: /gamify/adventureGame
     color: black;
     z-index: 1001;
 }
+
+/* Floating in-game message */
+.floating-message {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+/* Show the message */
+.floating-message.show {
+    opacity: 1;
+}
+
+/* Hide after some time */
+.floating-message.hide {
+    opacity: 0;
+}
 </style>
 
 <!-- Score & Stats -->
@@ -121,6 +148,28 @@ permalink: /gamify/adventureGame
     window.onload = function() {
         getStats();
     };
+
+    // Show floating message function
+    function showFloatingMessage(message) {
+        let messageBox = document.createElement("div");
+        messageBox.className = "floating-message";
+        messageBox.innerText = message;
+
+        document.body.appendChild(messageBox);
+
+        // Show the message
+        setTimeout(() => {
+            messageBox.classList.add("show");
+        }, 100);
+
+        // Hide and remove after 3 seconds
+        setTimeout(() => {
+            messageBox.classList.add("hide");
+            setTimeout(() => {
+                messageBox.remove();
+            }, 500);
+        }, 3000);
+    }
 </script>
 
 <script>
@@ -177,5 +226,6 @@ permalink: /gamify/adventureGame
         }
 
         updateNpcTracker();
+        showFloatingMessage(`You interacted with ${npcTracker[npcTracker.length - 1]}`);
     }
 </script>

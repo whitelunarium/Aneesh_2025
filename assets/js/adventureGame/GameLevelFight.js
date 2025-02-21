@@ -1,7 +1,7 @@
 import GameEnv from './GameEnv.js';
 import Background from './Background.js';
 import PlayerForBattle from './PlayerforBattle.js';
-import Npc from './Npc.js';
+import NpcForBattle from './NpcforBattle.js';
 
 class GameLevelFight {
     constructor(path) {
@@ -53,7 +53,7 @@ class GameLevelFight {
           SCALE_FACTOR: 5,  // Adjust this based on your scaling needs
           ANIMATION_RATE: 50,
           pixels: {height: 359, width: 372},
-          INIT_POSITION: { x: 900, y: 200},
+          INIT_POSITION: { x: 1000, y: 220},
           orientation: {rows: 4, columns: 6 },
           down: {row: 0, start: 0, columns: 4 },  // This is the stationary npc, down is default 
           hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
@@ -112,7 +112,7 @@ class GameLevelFight {
       this.objects = [
         { class: Background, data: image_data_fightbackground },
         { class: PlayerForBattle, data: sprite_data_learningdog },
-        { class: Npc, data: sprite_data_TeachingWolf },
+        { class: NpcForBattle, data: sprite_data_TeachingWolf },
        // { class: Npc, data: sprite_data_htmlhank }, 
       ];
     }
