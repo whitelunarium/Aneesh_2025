@@ -1,54 +1,32 @@
 import GameEnv from './GameEnv.js';
 import Character from './Character.js';
 
-// Define non-mutable constants as defaults
-const SCALE_FACTOR = 25; // 1/nth of the height of the canvas
-const STEP_FACTOR = 100; // 1/nth, or N steps up and across the canvas
-const ANIMATION_RATE = 1; // 1/nth of the frame rate
-const INIT_POSITION = { x: 0, y: 0 }
-
-/**
- * Player is a dynamic class that manages the data and events for objects like a player.
- */
 class PlayerForBattle extends Character {
-    /**
-     * The constructor method is called when a new Player object is created.
-     * 
-     * @param {Object|null} data - The sprite data for the object. If null, a default red square is used.
-     */
     constructor(data = null) {
         super(data);
         this.keypress = data?.keypress || { up: 87, left: 65, down: 83, right: 68 };
-        this.health = data?.health || 100; // Default health value
-        this.attack = data?.attack || 10; // Default attack value
-        this.velocity = { x: 0, y: 0 }; // Ensure velocity is set to zero
+        this.health = data?.health || 100;
+        this.attack = data?.attack || 10;
+        this.velocity = { x: 0, y: 0 };
         this.attackInterval = null;
-        this.bPressCount = 0; // Counter for "b" key presses
+        this.bPressCount = 0;
 
         this.bindEventListeners();
         this.startAttacking();
+        this.createRestButton(); // Adding the rest button on player creation
     }
 
-    /**
-     * Binds key event listeners, but movement is disabled.
-     */
     bindEventListeners() {
         addEventListener('keydown', this.handleKeyDown.bind(this));
         addEventListener('keyup', this.handleKeyUp.bind(this));
     }
 
-    /**
-     * Handles key down events but prevents movement.
-     */
     handleKeyDown(event) {
-        // Prevent movement by doing nothing
         this.velocity.x = 0;
         this.velocity.y = 0;
 
-        // Check if "b" is pressed
         if (event.key === "b") {
             this.bPressCount++;
-
             if (this.bPressCount >= 10) {
                 this.stopAttacking();
                 this.showFloatingMessage2("NPC has been defeated!");
@@ -57,11 +35,7 @@ class PlayerForBattle extends Character {
         }
     }
 
-    /**
-     * Handles key up events but ensures the player remains stationary.
-     */
     handleKeyUp(event) {
-        // Ensure velocity stays at zero
         this.velocity.x = 0;
         this.velocity.y = 0;
     }
@@ -75,15 +49,13 @@ class PlayerForBattle extends Character {
     attackPlayer() {
         this.showFloatingMessage("NPC is attacking!");
         console.log("NPC is attacking!");
-        
-        // Adding a brief pause before showing health-lowering message
+
         setTimeout(() => {
             this.showFloatingMessage("Player's health is lowered by 10!");
             console.log("Player's health is lowered by 10!");
-        }, 1000);  // Waits for 1 second before showing the health decrease message
+        }, 1000);
 
-        this.health -= 10; // Reduce player's health when attacked
-
+        this.health -= 10;
         if (this.health <= 0) {
             this.onPlayerDefeat();
         }
@@ -104,52 +76,78 @@ class PlayerForBattle extends Character {
         let messageBox = document.createElement("div");
         messageBox.textContent = message;
 
-        // Styling for the message box
         messageBox.style.position = "fixed";
-        messageBox.style.top = "475px"; // Move down by 100px from the previous 375px
-        messageBox.style.left = "95px"; // Keeps the left position the same
-        messageBox.style.transform = "translate(0%, 0%)"; // No translation needed for new position
+        messageBox.style.top = "475px"; 
+        messageBox.style.left = "95px"; 
         messageBox.style.background = "rgba(0, 0, 0, 0.9)"; 
         messageBox.style.color = "white";
-        messageBox.style.fontSize = "28px"; // Slightly smaller font size
+        messageBox.style.fontSize = "28px"; 
         messageBox.style.fontWeight = "bold"; 
-        messageBox.style.padding = "18px 36px"; // Slightly smaller padding
+        messageBox.style.padding = "18px 36px"; 
         messageBox.style.borderRadius = "10px"; 
-        messageBox.style.boxShadow = "0px 0px 15px rgba(255, 255, 255, 0.3)"; // Soft glow effect
+        messageBox.style.boxShadow = "0px 0px 15px rgba(255, 255, 255, 0.3)"; 
         messageBox.style.zIndex = "1000"; 
 
         document.body.appendChild(messageBox);
 
-        // Auto-remove after 3 seconds for better visibility
         setTimeout(() => {
             document.body.removeChild(messageBox);
-        }, 3000);
+        }, 2000);
     }
 
     showFloatingMessage2(message) {
         let messageBox = document.createElement("div");
         messageBox.textContent = message;
 
-        // Styling for a bigger and centered message box
         messageBox.style.position = "fixed";
         messageBox.style.top = "50%"; 
         messageBox.style.left = "50%"; 
-        messageBox.style.transform = "translate(-50%, -50%)"; // Centers it
+        messageBox.style.transform = "translate(-50%, -50%)";
         messageBox.style.background = "rgba(0, 0, 0, 0.9)"; 
         messageBox.style.color = "white";
-        messageBox.style.fontSize = "24px"; // Increased font size
+        messageBox.style.fontSize = "24px"; 
         messageBox.style.fontWeight = "bold"; 
-        messageBox.style.padding = "20px 40px"; // Bigger padding for a larger box
+        messageBox.style.padding = "20px 40px"; 
         messageBox.style.borderRadius = "10px"; 
-        messageBox.style.boxShadow = "0px 0px 15px rgba(255, 255, 255, 0.3)"; // Soft glow effect
+        messageBox.style.boxShadow = "0px 0px 15px rgba(255, 255, 255, 0.3)"; 
         messageBox.style.zIndex = "1000"; 
 
         document.body.appendChild(messageBox);
 
-        // Auto-remove after 3 seconds for better visibility
         setTimeout(() => {
             document.body.removeChild(messageBox);
         }, 3000);
+    }
+
+    createRestButton() {
+        let restButton = document.createElement("button");
+        restButton.textContent = "Rest";
+        restButton.style.position = "fixed";
+        restButton.style.bottom = "50px";
+        restButton.style.left = "1200px";
+        restButton.style.padding = "12px 24px";
+        restButton.style.fontSize = "18px";
+        restButton.style.fontWeight = "bold";
+        restButton.style.backgroundColor = "green";
+        restButton.style.color = "white";
+        restButton.style.border = "none";
+        restButton.style.borderRadius = "8px";
+        restButton.style.cursor = "pointer";
+        restButton.style.boxShadow = "0px 0px 10px rgba(0, 255, 0, 0.5)";
+
+        restButton.addEventListener("click", () => this.increaseHealth());
+
+        document.body.appendChild(restButton);
+    }
+
+    increaseHealth() {
+        if (this.health < 100) {
+            this.health = Math.min(100, this.health + 10);
+            this.showFloatingMessage(`Player health increased by 10! Current health: ${this.health}`);
+            console.log(`Player health increased by 10. Current health: ${this.health}`);
+        } else {
+            this.showFloatingMessage("Health is already at maximum!");
+        }
     }
 }
 

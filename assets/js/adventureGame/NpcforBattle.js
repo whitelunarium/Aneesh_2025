@@ -10,6 +10,7 @@ class NpcForBattle extends Character {
         this.currentQuestionIndex = 0;
         this.health = data?.health || 100;
 
+        this.createAttackButton();
         this.bindEventListeners();
     }
 
@@ -77,37 +78,55 @@ class NpcForBattle extends Character {
     }
 
     onDefeat() {
-        alert("Npc has been defeated. Please move on to the next level!")
+        alert("NPC has been defeated. Please move on to the next level!");
         console.log("NPC has been defeated!");
-        clearInterval(this.attackInterval);
     }
 
     showFloatingMessage(message) {
         let messageBox = document.createElement("div");
         messageBox.textContent = message;
-    
-        // Styling for the message box, moved slightly right and up
+
+        // Styling for the message box
         messageBox.style.position = "fixed";
-        messageBox.style.top = "calc(50% + 25px)"; // Moves it 25px higher
-        messageBox.style.left = "calc(50% + 300px)"; // Moves it 25px more to the right
-        messageBox.style.transform = "translate(-50%, -50%)"; // Centers it based on new position
+        messageBox.style.top = "calc(50% + 25px)"; 
+        messageBox.style.left = "calc(50% + 300px)"; 
+        messageBox.style.transform = "translate(-50%, -50%)"; 
         messageBox.style.background = "rgba(0, 0, 0, 0.9)"; 
         messageBox.style.color = "white";
-        messageBox.style.fontSize = "20px"; // Slightly smaller font size
+        messageBox.style.fontSize = "20px"; 
         messageBox.style.fontWeight = "bold"; 
-        messageBox.style.padding = "15px 30px"; // Smaller padding for a smaller box
+        messageBox.style.padding = "15px 30px"; 
         messageBox.style.borderRadius = "10px"; 
-        messageBox.style.boxShadow = "0px 0px 15px rgba(255, 255, 255, 0.3)"; // Soft glow effect
+        messageBox.style.boxShadow = "0px 0px 15px rgba(255, 255, 255, 0.3)"; 
         messageBox.style.zIndex = "1000"; 
-    
+
         document.body.appendChild(messageBox);
-    
-        // Auto-remove after 3 seconds for better visibility
+
         setTimeout(() => {
             document.body.removeChild(messageBox);
-        }, 3000);
+        }, 2000);
     }
-    
+
+    createAttackButton() {
+        let attackButton = document.createElement("button");
+        attackButton.textContent = "Attack";
+        attackButton.style.position = "fixed";
+        attackButton.style.bottom = "50px";
+        attackButton.style.left = "50px";
+        attackButton.style.padding = "12px 24px";
+        attackButton.style.fontSize = "18px";
+        attackButton.style.fontWeight = "bold";
+        attackButton.style.backgroundColor = "red";
+        attackButton.style.color = "white";
+        attackButton.style.border = "none";
+        attackButton.style.borderRadius = "8px";
+        attackButton.style.cursor = "pointer";
+        attackButton.style.boxShadow = "0px 0px 10px rgba(255, 0, 0, 0.5)";
+
+        attackButton.addEventListener("click", () => this.reduceHealth());
+
+        document.body.appendChild(attackButton);
+    }
 }
 
 export default NpcForBattle;

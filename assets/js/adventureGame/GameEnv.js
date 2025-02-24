@@ -117,6 +117,14 @@ class GameEnv {
         this.create();
     }
 
+    static getPlayer() {
+        return this.gameObjects.find(obj => obj instanceof PlayerForBattle) || null;
+    }
+    
+    static getNpc() {
+        return this.gameObjects.find(obj => obj instanceof PlayerForBattle) || null;
+    }
+
     /**
      * Clears the canvas.
      * 
