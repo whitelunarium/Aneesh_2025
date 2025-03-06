@@ -6,8 +6,6 @@ import GameLevelGrassland from './GameLevelGrassland.js';
 import GameLevelFight from './GameLevelFight.js';
 import GameLevelAftermath from './GameLevelAftermath.js';
 
-
-
 const createStatsUI = () => {
     const statsContainer = document.createElement('div');
     statsContainer.id = 'stats-container';
@@ -24,32 +22,18 @@ const createStatsUI = () => {
         <div>Questions Answered: <span id="questionsAnswered">0</span></div>
     `;
     document.body.appendChild(statsContainer);
+
+    this.bindEventListeners();
 };
 
-/**
- * The GameControl object manages the game.
- * 
- * This code uses the JavaScript "object literal pattern" which is nice for centralizing control logic.
- * 
- * The object literal pattern is a simple way to create singleton objects in JavaScript.
- * It allows for easy grouping of related functions and properties, making the code more organized and readable.
- * In the context of GameControl, this pattern helps centralize the game's control logic, 
- * making it easier to manage game states, handle events, and maintain the overall flow of the game.
- * 
- * @type {Object}
- * @property {Player} turtle - The player object.
- * @property {Player} fish 
- * @property {function} start - Initialize game assets and start the game loop.
- * @property {function} gameLoop - The game loop.
- * @property {function} resize - Resize the canvas and player object when the window is resized.
- */
 const GameControl = {
-    intervalID: null, // Variable to hold the timer interval reference
+    intervalID: null,
     localStorageTimeKey: "localTimes",
     currentPass: 0,
     currentLevelIndex: 0,
     levelClasses: [],
     path: '',
+    bPressCount: 0,
 
     start: function(path) {
         GameEnv.create();
@@ -58,6 +42,7 @@ const GameControl = {
         this.path = path;
         this.addExitKeyListener();
         this.loadLevel();
+        this.bindEventListeners();
     },
     
     loadLevel: function() {
@@ -72,67 +57,89 @@ const GameControl = {
         const levelInstance = new LevelClass(this.path);
         this.loadLevelObjects(levelInstance);
     },
+
+    bindEventListeners() {
+        addEventListener("keydown", this.handleKeyDown.bind(this));
+        addEventListener("keyup", this.handleKeyUp.bind(this));
+    },
+
+    handleKeyDown({ key }) {
+            switch (key) {
+                case "e":
+                case "u":
+                    this.handleLevelEnd();
+                    break;
+                case "b":
+                    this.bPressCount++;
+                    if (this.bPressCount >= 10) {
+                        console.log("Level ending");
+                        this.handleLevelEnd();
+                        this.bPressCount = 0; // Reset the counter if needed
+                        }
+                        break;
+                case "k":
+                    console.log("Level ending");
+                    this.handleLevelEnd();
+                    break;
+        }
+    },
+
+    handleKeyUp({ key }) {
+        if (key === "e" || key === "u") {
+            if (this.alertTimeout) {
+                clearTimeout(this.alertTimeout);
+                this.alertTimeout = null;
+            }
+        }
+    },
     
     loadLevelObjects: function(gameInstance) {
         this.initStatsUI();
-        // Instantiate the game objects
         for (let object of gameInstance.objects) {
             if (!object.data) object.data = {};
             new object.class(object.data);
         }
-        // Start the game loop
-        this.gameLoop();
+        this.gameLoop();    
         getStats();
     },
 
     gameLoop: function() {
-        // Base case: leave the game loop 
         if (!GameEnv.continueLevel) {
             this.handleLevelEnd();
             return;
         }
-        // Nominal case: update the game objects 
         GameEnv.clear();
         for (let object of GameEnv.gameObjects) {
-            object.update();  // Update the game objects
+            object.update();
         }
         this.handleLevelStart();
-        // Recursively call this function at animation frame rate
         requestAnimationFrame(this.gameLoop.bind(this));
     },
 
     handleLevelStart: function() {
-        // First time message for level 0, delay 10 passes
         if (this.currentLevelIndex === 0 && this.currentPass === 10) {
             alert("Start Level.");
         }
-        // Recursion tracker
         this.currentPass++;
     },
 
     handleLevelEnd: function() {
-        // More levels to play 
         if (this.currentLevelIndex < this.levelClasses.length - 1) {
             alert("Level ended.");
-        } else { // All levels completed
+        } else {
             alert("Game over. All levels completed.");
         }
-        // Tear down the game environment
         for (let index = GameEnv.gameObjects.length - 1; index >= 0; index--) {
             GameEnv.gameObjects[index].destroy();
         }
-        // Move to the next level
         this.currentLevelIndex++;
-        // Go back to the loadLevel function
         this.loadLevel();
     },
     
     resize: function() {
-        // Resize the game environment
         GameEnv.resize();
-        // Resize the game objects
         for (let object of GameEnv.gameObjects) {
-            object.resize(); // Resize the game objects
+            object.resize();
         }
     },
 
@@ -144,115 +151,85 @@ const GameControl = {
         });
     },
 
-    /**
-     * Updates and displays the game timer.
-     * @function updateTimer
-     * @memberof GameControl
-     */ 
     saveTime(time, score) {
         if (time == 0) return;
-        const userID = GameEnv.userID
-        const oldTable = this.getAllTimes()
+        const userID = GameEnv.userID;
+        const oldTable = this.getAllTimes();
 
         const data = {
             userID: userID,
             time: time,
             score: score
-        }
+        };
 
         if (!oldTable) {
-            localStorage.setItem(this.localStorageTimeKey, JSON.stringify([data]))
+            localStorage.setItem(this.localStorageTimeKey, JSON.stringify([data]));
             return;
         }
 
-        oldTable.push(data)
-
-        localStorage.setItem(this.localStorageTimeKey, JSON.stringify(oldTable))
+        oldTable.push(data);
+        localStorage.setItem(this.localStorageTimeKey, JSON.stringify(oldTable));
     },
+
     getAllTimes() {
         let timeTable = null;
-
         try {
             timeTable = localStorage.getItem(this.localStorageTimeKey);
-        }
-        catch (e) {
+        } catch (e) {
             return e;
         }
-
-        return JSON.parse(timeTable)
+        return JSON.parse(timeTable);
     },
-    updateTimer() {
-        const time = GameEnv.time
 
+    updateTimer() {
+        const time = GameEnv.time;
         if (GameEnv.timerActive) {
-            const newTime = time + GameEnv.timerInterval
-            GameEnv.time = newTime                
+            const newTime = time + GameEnv.timerInterval;
+            GameEnv.time = newTime;
             if (document.getElementById('timeScore')) {
-                document.getElementById('timeScore').textContent = (time/1000).toFixed(2) 
+                document.getElementById('timeScore').textContent = (time / 1000).toFixed(2);
             }
-                return newTime
-            }
-            if (document.getElementById('timeScore')) {
-                document.getElementById('timeScore').textContent = (time/1000).toFixed(2) 
-            }
-    },   
-    /**
-     * Starts the game timer.
-     * @function startTimer
-     * @memberof GameControl
-     */
+            return newTime;
+        }
+        if (document.getElementById('timeScore')) {
+            document.getElementById('timeScore').textContent = (time / 1000).toFixed(2);
+        }
+    },
+
     startTimer() {
         if (GameEnv.timerActive) {
-            console.warn("TIMER ACTIVE: TRUE, TIMER NOT STARTED")
+            console.warn("TIMER ACTIVE: TRUE, TIMER NOT STARTED");
             return;
         }
-        
         this.intervalId = setInterval(() => this.updateTimer(), GameEnv.timerInterval);
         GameEnv.timerActive = true;
     },
 
-    /**
-     * Stops the game timer.
-     * @function stopTimer
-     * @memberof GameControl
-     */
     stopTimer() {   
         if (!GameEnv.timerActive) return;
-        
-        this.saveTime(GameEnv.time, GameEnv.coinScore)
-
-        GameEnv.timerActive = false
+        this.saveTime(GameEnv.time, GameEnv.coinScore);
+        GameEnv.timerActive = false;
         GameEnv.time = 0;
         GameEnv.coinScore = 0;
-        this.updateCoinDisplay()
-        clearInterval(this.intervalID)
+        this.updateCoinDisplay();
+        clearInterval(this.intervalID);
     },
 
-    saveTime() {
-        const data = {
-            userID: GameEnv.userID,
-            time: GameEnv.time - 10,
-            coinScore: GameEnv.coinScore
+    checkDefeat() {
+        if (GameLevelFight.playerhealth <= 0) {
+            console.log("Player defeat");
+            this.handleLevelEnd();
+        } else if (GameLevelFight.health <= 0) {  // Use 'else if' for checking NPC health
+            console.log("Npc defeat");
+            this.handleLevelEnd();
         }
+    },
 
-        const currDataList = JSON.parse(localStorage.getItem(this.localStorageTimeKey))
-
-        if (!currDataList || !Array.isArray(currDataList)) {
-            localStorage.setItem(this.localStorageTimeKey, JSON.stringify([data]))
-            return;
-        }
-
-        currDataList.push(data)
-        
-        localStorage.setItem(this.localStorageTimeKey, JSON.stringify(currDataList))
-    },  
-
-    // Initialize UI for game stats
     initStatsUI: function() {
         const statsContainer = document.createElement('div');
         statsContainer.id = 'stats-container';
         statsContainer.style.position = 'fixed';
-        statsContainer.style.top = '75px'; 
+        statsContainer.style.top = '75px';
         statsContainer.style.right = '10px';
         statsContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
         statsContainer.style.color = 'white';
@@ -265,10 +242,8 @@ const GameControl = {
         `;
         document.body.appendChild(statsContainer);
     },
-
 };
 
-// Detect window resize events and call the resize function.
 window.addEventListener('resize', GameControl.resize.bind(GameControl));
 
 export default GameControl;

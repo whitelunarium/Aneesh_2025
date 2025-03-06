@@ -32,7 +32,7 @@ class GameLevelFight {
           SCALE_FACTOR: learningdog_SCALE_FACTOR,
           STEP_FACTOR: 1000,
           ANIMATION_RATE: 50,
-          INIT_POSITION: { x: 300, y: 350 }, 
+          INIT_POSITION: { x: 300, y: 365 }, 
           pixels: {height: 254, width: 568},
           orientation: {rows: 4, columns: 9 },
           down: {row: 2, start: 0, columns: 9 },
@@ -48,12 +48,11 @@ class GameLevelFight {
       const sprite_src_TeachingWolf = path + "/images/gamify/Download87405.png"; // be sure to include the path
       const sprite_data_TeachingWolf = {
           id: 'TeachingWolf',
-          greeting: "What are you looking at, do you wanna fight? Press ESC to fight me!",
           src: sprite_src_TeachingWolf,
-          SCALE_FACTOR: 3,  // Adjust this based on your scaling needs
+          SCALE_FACTOR: 5,  // Adjusted for less blurriness
           ANIMATION_RATE: 50,
           pixels: {height: 257, width: 577},
-          INIT_POSITION: { x: 1000, y: 120},
+          INIT_POSITION: { x: 1000, y: 200},
           orientation: {rows: 4, columns: 9 },
           down: {row: 2, start: 0, columns: 9 },  // This is the stationary npc, down is default 
           hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },

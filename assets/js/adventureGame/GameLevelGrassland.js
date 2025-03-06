@@ -48,9 +48,9 @@ class GameLevelGrassland {
       const sprite_src_TeachingWolf = path + "/images/gamify/Download87405.png"; // be sure to include the path
       const sprite_data_TeachingWolf = {
           id: 'TeachingWolf',
-          greeting: "What are you looking at, do you wanna fight? Press ESC to fight me!",
+          greeting: "What are you looking at, do you wanna fight? Press E or U to fight me!",
           src: sprite_src_TeachingWolf,
-          SCALE_FACTOR: 3,  // Adjust this based on your scaling needs
+          SCALE_FACTOR: 5,  // Adjust this based on your scaling needs
           ANIMATION_RATE: 50,
           pixels: {height: 257, width: 577},
           INIT_POSITION: { x: (width / 2), y: (height / 2)},
@@ -107,6 +107,7 @@ class GameLevelGrassland {
           ]
       }
   }; */
+
   
       // List of objects defnitions for this level
       this.objects = [

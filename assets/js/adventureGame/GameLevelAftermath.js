@@ -50,7 +50,7 @@ class GameLevelAftermath {
           id: 'TeachingWolf',
           greeting: "Contragulations, you have beat me...",
           src: sprite_src_TeachingWolf,
-          SCALE_FACTOR: 3,  // Adjust this based on your scaling needs
+          SCALE_FACTOR: 5,  // Adjust this based on your scaling needs
           ANIMATION_RATE: 50,
           pixels: {height: 257, width: 577},
           INIT_POSITION: { x: (width / 2), y: (height / 2)},

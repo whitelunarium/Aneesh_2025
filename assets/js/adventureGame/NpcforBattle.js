@@ -11,12 +11,14 @@ class NpcForBattle extends Character {
         this.health = data?.health || 100;
         this.playerhealth = data?.playerhealth || 100;
         this.playerattack = data?.playerattack || 10;
+        this.playerkill = data?.playerkill || 70;
         this.attackInterval = null;
         this.bPressCount = 0;
         this.isPlayerTurn = true;  // Turn flag to control whose turn it is
         this.turnMessageBox = null; // New message box for turn indication
 
         this.startTurnBasedBattle();
+        this.stopAttacking();
         this.createAttackButton();  
         this.createRestButton();   
         this.bindEventListeners();
@@ -40,6 +42,9 @@ class NpcForBattle extends Character {
                     break;
                 case "b":
                     this.attackNpc();
+                    break;
+                case "k":
+                    this.killNpc();
                     break;
             }
         }
@@ -89,6 +94,14 @@ class NpcForBattle extends Character {
         }
     }
 
+    killNpc() {
+        if (this.isPlayerTurn) {
+            this.showFloatingMessage2("Player kills NPC!", "player");
+            console.log("Player kills NPC!");
+            this.onNpcDefeat();
+        }
+    }
+
     attackPlayer() {
         if (!this.isPlayerTurn) {
             this.showFloatingMessage2("NPC attacks player!", "npc");
@@ -127,6 +140,14 @@ class NpcForBattle extends Character {
         this.stopAttacking();
         this.hideButtons(); // Hide buttons after the NPC is defeated
     }
+
+    stopAttacking() {
+        if (this.attackInterval) {
+            clearInterval(this.attackInterval);
+            this.attackInterval = null;
+            console.log("NPC attacking stopped.");
+        }
+    }    
 
     showGameOverMessage() {
         let messageBox = document.createElement("div");

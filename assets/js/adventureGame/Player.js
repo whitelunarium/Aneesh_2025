@@ -7,6 +7,9 @@ const STEP_FACTOR = 100; // 1/nth, or N steps up and across the canvas
 const ANIMATION_RATE = 1; // 1/nth of the frame rate
 const INIT_POSITION = { x: 0, y: 0 };
 
+// Define the speed constant
+const SPEED = 2; // character speed
+
 /**
  * Player is a dynamic class that manages the data and events for objects like a player 
  * 
@@ -25,8 +28,7 @@ class Player extends Character {
     constructor(data = null) {
         super(data);
         this.keypress = data?.keypress || {up: 87, left: 65, down: 83, right: 68};
-        this.health = data?.health || 100; // Default health value
-        this.attack = data?.attack || 10; // Default attack value
+        this.velocity = { x: 0, y: 0 };
         this.bindEventListeners();
     }
 
@@ -45,19 +47,19 @@ class Player extends Character {
     handleKeyDown({ keyCode }) {
         switch (keyCode) {
             case this.keypress.up:
-                this.velocity.y -= this.yVelocity;
+                this.velocity.y = -SPEED;
                 this.direction = 'up';
                 break;
             case this.keypress.left:
-                this.velocity.x -= this.xVelocity;
+                this.velocity.x = -SPEED;
                 this.direction = 'left';
                 break;
             case this.keypress.down:
-                this.velocity.y += this.yVelocity;
+                this.velocity.y = SPEED;
                 this.direction = 'down';
                 break;
             case this.keypress.right:
-                this.velocity.x += this.xVelocity;
+                this.velocity.x = SPEED;
                 this.direction = 'right';
                 break;
         }
@@ -73,15 +75,11 @@ class Player extends Character {
     handleKeyUp({ keyCode }) {
         switch (keyCode) {
             case this.keypress.up:
+            case this.keypress.down:
                 this.velocity.y = 0;
                 break;
             case this.keypress.left:
-                this.velocity.x = 0;
-                break;
-            case this.keypress.down: 
-                this.velocity.y = 0;
-                break;
-            case this.keypress.right: 
+            case this.keypress.right:
                 this.velocity.x = 0;
                 break;
         }
